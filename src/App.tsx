@@ -1,7 +1,12 @@
-import ListGroup from './components/ListGroup';
+import Sidebar from "./components/Sidebar";
+import ListGroup from "./components/Sidebar";
 
-function App(){
-  return <div><ListGroup /></div>
+function App() {
+  return (
+    <div>
+      <Sidebar />
+    </div>
+  );
 }
 
 export default App;
