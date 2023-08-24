@@ -1,0 +1,30 @@
+/* Sidebar.css */
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex; /* Use flex display */
+  flex-direction: column; /* Arrange items vertically */
+}
+
+.sidebar-list {
+  list-style-type: none;
+  padding: 0;
+  flex-grow: 1; /* Allow the list to grow and fill available space */
+  display: flex; /* Use flex display for the list items */
+  flex-direction: column; /* Arrange list items vertically */
+}
+
+.sidebar-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.sidebar-list li:hover {
+  color: #ff9900;
+}
