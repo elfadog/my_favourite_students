@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import App from "App.css";
 
 function DropMenu() {
   const [menuVisible, setMenuVisible] = useState(false);
