@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import App from "App.css";
 
 function DropMenu() {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -18,7 +19,7 @@ function DropMenu() {
 
   return (
     <div className="dropdown">
-      <button onClick={toggleMenu}>Menu</button>
+      <button onClick={toggleMenu}>=</button>
       {menuVisible && (
         <ul className="dropdown-menu">
           {menuItems.map((item) => (
