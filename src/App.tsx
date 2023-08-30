@@ -1,10 +1,9 @@
-import Sidebar from "./components/Sidebar";
-import ListGroup from "./components/Sidebar";
+import ListGroup from "./components/ListGroup";
 
 function App() {
   return (
     <div>
-      <Sidebar />
+      <ListGroup />
     </div>
   );
 }
