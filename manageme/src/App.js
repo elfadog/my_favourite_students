@@ -4,7 +4,7 @@ import DropMenu from './Pages/Dashboard/DropMenu';
 
 function App() {
   return (
-    <div className='grid-container'> <DropMenu /> </div>
+    <div className='grid-container'> <ListGroup /> </div>
   );
 }
 
