@@ -19,33 +19,33 @@ body {
 
 .login-box {
   background: rgba(113, 93, 242, 0.9);
-  padding: 5%; /* Use relative percentage for padding */
+  padding: 5%;
   border-radius: 8px;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
   text-align: center;
   display: flex;
   flex-direction: column;
-  width: 25vw; /* Set width to 25% of the viewport width */
-  height: 25vh; /* Set height to 25% of the viewport height */
+  /* Remove fixed width and height */
+  /* width: 25vw;
+  height: 25vh; */
   margin: 0 auto;
   color: white;
-  justify-content: normal;
+  /* Remove justify-content: normal; */
 }
 
 .login-box h2 {
   margin-bottom: 1%;
   margin-top: inherit;
-  font-size: 4vw;
+  font-size: 300%;
 }
 
 .form-group {
-  margin-bottom: 3%; /* Use relative percentage for margin */
+  margin-bottom: 3%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally within the form-group */
-  justify-content: center; /* Center content vertically within the form-group */
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  flex-grow: 1; /* Allow the form-group to grow and occupy available space */
 }
 
 label {
