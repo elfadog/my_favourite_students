@@ -1,8 +1,6 @@
-/* Login.css */
 @font-face {
   font-family: "MuseoModerno-Regular"; /* Name your custom font */
-  src: url("./MuseoModerno-Regular.ttf") format("truetype"); /* Specify the path to your font file */
-  /* Add additional font styles as needed */
+  src: url("./MuseoModerno-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +13,7 @@
 }
 
 body {
-  background-image: url("./login-gradiant.svg"); /* Use a relative path to your SVG file */
+  background-image: url("./login-gradiant.svg");
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
@@ -42,10 +40,9 @@ body {
   width: 53.333px;
   height: 53.333px;
   flex-shrink: 0;
-  margin: 0px; /* Center the logo horizontally and add space below */
+  margin: 0px;
 }
 
-/* Modify the login-box styles to include the logo */
 .login-box {
   @media screen and (max-width: 500px) {
     padding: 24px;
@@ -59,13 +56,13 @@ body {
   display: flex;
   width: 100%;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
-  /*justify-content: center; /* Center content vertically */
+  align-items: center;
+  /*justify-content: center; */
   width: auto;
   height: auto;
   margin: 0 auto;
   color: black;
-  overflow: hidden; /* Clip any content that overflows the box */
+  overflow: hidden;
 }
 
 .login-box h2 {
@@ -105,15 +102,14 @@ input {
   width: 100%;
   height: 40px;
   display: flex;
-  padding: 16px; /* Use relative percentage for padding */
+  padding: 16px;
   background-color: #d9d9d9;
   border: 1px solid #d9d9d9;
   border-radius: 0px;
   color: black;
-  box-sizing: border-box; /* Include padding and border within the width */
+  box-sizing: border-box;
 }
 
-/* Set placeholder text color to white */
 input::placeholder {
   color: black;
 }
