@@ -1,72 +1,84 @@
-/* Dashboard.css */
-body {
-    /* background-image: url('./login/login-gradiant.svg'); Use a relative path to your SVG file */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-  }
+@font-face {
+  font-family: "MuseoModerno-Regular"; /* Name your custom font */
+  src: url("./MuseoModerno-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  .dashboard-container {
-    height: 100vh;
-    /* display: flex;
+@font-face {
+  font-family: "Koulen-Regular";
+  src: url("./Koulen-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  /* background-image: url('./login/login-gradiant.svg'); Use a relative path to your SVG file */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.dashboard-container {
+  height: 100vh;
+  /* display: flex;
     flex-direction: column; */
-    /* display: grid;
+  /* display: grid;
     grid-template-rows: 5% auto;
     grid-template-columns: 10% auto;
     grid-template-areas: 
         'banner banner'
         'nav main'; */
-  }
-  
-  .dashboard-container:hover {
-    /* Replace with your hover image */
-    background-size: cover;
-    background-position: center;
-  }  
-  
-  .banner {
-    grid-area: banner;
-    color: #ffffff;
-    background: #6600FF;
-    border-bottom: 2px solid black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-  }
+}
 
-  .nav {
-    grid-area: nav;
-    background-color: #8534ff;
-    color: white;
-    border: 2px solid #000000;
-    cursor: pointer;
-  }
+.dashboard-container:hover {
+  /* Replace with your hover image */
+  background-size: cover;
+  background-position: center;
+}
 
-  aside {
-    background-color: #8534ff;
-    color: #ffffff;
-    float: left;
-    box-shadow: 0px 10px 30px 10px rgba(0, 0, 0, 1);
-  }
-  
-  .main {
-    grid-area: main;
-    padding: 2%;
-    
-  }
-  
- button {
-    background-color: #6600FF;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+.banner {
+  grid-area: banner;
+  color: #ffffff;
+  background: #6600ff;
+  border-bottom: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.nav {
+  grid-area: nav;
+  background-color: #8534ff;
+  color: white;
+  border: 2px solid #000000;
+  cursor: pointer;
+}
+
+aside {
+  background-color: #8534ff;
+  color: #ffffff;
+  float: left;
+  box-shadow: 0px 10px 30px 10px rgba(0, 0, 0, 1);
+}
+
+.main {
+  grid-area: main;
+  padding: 2%;
+}
+
+button {
+  background-color: #6600ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
