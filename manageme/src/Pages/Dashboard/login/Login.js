@@ -20,51 +20,47 @@
 // //     </div>
 // //   );
 // // }
-
 // // export default Login;
 
 import React, { useEffect } from 'react';
-import gsap from 'gsap'; // Import GSAP
+import gsap from 'gsap';
 import './Login.css';
+import logo from './logo.png'; // Import the logo image
 
-function Login() {
+const Login = () => {
   useEffect(() => {
-    // Select the login box and SVG elements
     const loginBox = document.querySelector('.login-box');
     const svg = document.querySelector('.background-svg');
-
-    // Hide the login box initially
     gsap.set(loginBox, { opacity: 0 });
 
-    // Create an animation timeline
     const tl = gsap.timeline();
-
-    // Add animations to the timeline
     tl.to(svg, { duration: 0.5, scale: 1.5, opacity: 0, ease: 'power1.in' })
       .to(loginBox, { duration: 1, opacity: 1, ease: 'power1.out' });
-
-    // Play the animation timeline
     tl.play();
   }, []);
 
   return (
     <div className="login-container">
-      <svg className="background-svg" /* SVG attributes */ />
       <div className="login-box">
+      <img src={logo} alt="Logo" className="logo" /> {/* Use the imported logo */}
         <h2>ManageMe</h2>
         <form>
           <div className="form-group">
-            <input type="text" id="username" name="username" placeholder="Username" />
+            <label htmlFor='username'>USERNAME:</label> {/* Add a label for the username input */}
+            <input type="text" id="username" name="username"/>
           </div>
           <div className="form-group">
-            <input type="password" id="password" name="password" placeholder="Password" />
+            <label htmlFor='password'>PASSWORD:</label> {/* Add a label for the password input */}
+            <input type="password" id="password" name="password"/>
           </div>
-          <button type="submit">Login</button>
         </form>
+        <button type="submit">Login</button>
       </div>
     </div>
   );
 }
+
+
 
 export default Login;
 

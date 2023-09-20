@@ -1,14 +1,36 @@
 /* Login.css */
+@font-face {
+  font-family: "MuseoModerno-Regular"; /* Name your custom font */
+  src: url("./MuseoModerno-Regular.ttf") format("truetype"); /* Specify the path to your font file */
+  /* Add additional font styles as needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Koulen-Regular";
+  src: url("./Koulen-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  background-image: url('./login-gradiant.svg'); /* Use a relative path to your SVG file */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin: 0;
+  background-image: url("./login-gradiant.svg"); /* Use a relative path to your SVG file */
+  font-family: sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  margin: 0;
   height: 100vh;
   background-size: cover;
   background-position: center;
+  background-color: #783cc8;
+}
+
+.login-container {
+  margin: auto;
+  align-self: center;
+  padding: 32px;
 }
 
 .login-container:hover {
@@ -16,71 +38,100 @@ body {
   background-size: cover;
   background-position: center;
 }
+.logo {
+  width: 53.333px;
+  height: 53.333px;
+  flex-shrink: 0;
+  margin: 0px; /* Center the logo horizontally and add space below */
+}
 
+/* Modify the login-box styles to include the logo */
 .login-box {
-  background: rgba(113, 93, 242, 0.9);
-  padding: 5%;
+  @media screen and (max-width: 500px) {
+    padding: 24px;
+  }
+  max-width: 500px;
+  background: white;
+  padding: 32px;
   border-radius: 8px;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
   text-align: center;
   display: flex;
+  width: 100%;
   flex-direction: column;
-  /* Remove fixed width and height */
-  /* width: 25vw;
-  height: 25vh; */
+  align-items: center; /* Center content horizontally */
+  /*justify-content: center; /* Center content vertically */
+  width: auto;
+  height: auto;
   margin: 0 auto;
-  color: white;
-  /* Remove justify-content: normal; */
+  color: black;
+  overflow: hidden; /* Clip any content that overflows the box */
 }
 
 .login-box h2 {
-  margin-bottom: 1%;
-  margin-top: inherit;
-  font-size: 300%;
+  margin: 0;
+  margin-bottom: 32px;
+  color: #000;
+  font-family: "MuseoModerno-Regular", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  flex-direction: column;
+  width: 100%;
 }
 
 .form-group {
-  margin-bottom: 3%;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
   width: 100%;
 }
 
 label {
-  display: block;
-  font-weight: bold;
-  text-align: left;
+  min-width: 100px;
+  margin-right: 16px;
+  font-family: "Koulen-Regular", sans-serif;
 }
 
 input {
   width: 100%;
-  max-width: 89%;
-  padding: 3%; /* Use relative percentage for padding */
-  background-color: #6600FF;
-  border: 1px solid #6600FF;
-  border-radius: 15px;
-  margin-bottom: 3%; /* Use relative percentage for margin */
-  color: white;
-  flex-grow: 3; /* Allow the input to grow to 3 times its initial size */
-  flex-basis: 40%; /* Set an initial size (adjust as needed) */
+  height: 40px;
+  display: flex;
+  padding: 16px; /* Use relative percentage for padding */
+  background-color: #d9d9d9;
+  border: 1px solid #d9d9d9;
+  border-radius: 0px;
+  color: black;
   box-sizing: border-box; /* Include padding and border within the width */
-  text-align: center;
 }
 
 /* Set placeholder text color to white */
 input::placeholder {
-  color: white;
+  color: black;
 }
 
 button {
-  background-color: #6600FF;
-  color: white;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9d9d9;
+  color: black;
   border: none;
-  padding: 3% 5%; /* Use relative percentage for padding */
-  border-radius: 15px;
+  padding: 16px 24px;
+  border-radius: 0px;
   cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: "Koulen-Regular", sans-serif;
 }
 
 button:hover {
