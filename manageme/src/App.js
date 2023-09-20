@@ -5,7 +5,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard.js";
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Dashboard />
       {/* <Dashboard /> */}
     </div>
   );

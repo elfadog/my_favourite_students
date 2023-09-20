@@ -12,6 +12,12 @@
   font-style: normal;
 }
 
+h2 {
+  font-family: "MuseoModerno-Regular";
+  font-size: 2rem;
+  color: black;
+}
+
 body {
   /* background-image: url('./login/login-gradiant.svg'); Use a relative path to your SVG file */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -73,7 +79,7 @@ aside {
 }
 
 button {
-  background-color: #6600ff;
+  background-image: url("./logo.png");
   color: white;
   border: none;
   cursor: pointer;

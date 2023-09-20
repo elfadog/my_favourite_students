@@ -1,8 +1,6 @@
 import React from "react";
 // import gsap from 'gsap'; // Import GSAP
-import ListGroup from "./ListGroup";
 import "./Dashboard.css";
-import DropMenu from "./DropMenu";
 
 function Dashboard() {
   const menuItems = [
@@ -18,7 +16,6 @@ function Dashboard() {
     <div className="dashboard-container">
       <div className="banner">
         <h2>ManageMe</h2>
-        <ListGroup />
         <p>account</p>
       </div>
       <div className="main">
