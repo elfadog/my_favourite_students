@@ -1,27 +1,3 @@
-// // // Login.js
-// // import React from 'react';
-// // import './Login.css';
-
-// // function Login() {
-// //   return (
-// //     <div className="login-container">
-// //       <div className="login-box">
-// //         <h2>ManageMe</h2>
-// //         <form>
-// //           <div className="form-group">
-// //             <input type="text" id="username" name="username" placeholder="Username" />
-// //           </div>
-// //           <div className="form-group">
-// //             <input type="password" id="password" name="password" placeholder="Password" />
-// //           </div>
-// //           <button type="submit">Login</button>
-// //         </form>
-// //       </div>
-// //     </div>
-// //   );
-// // }
-// // export default Login;
-
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import './Login.css';
@@ -42,15 +18,15 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-box">
-      <img src={logo} alt="Logo" className="logo" /> {/* Use the imported logo */}
+      <img src={logo} alt="Logo" className="logo" />
         <h2>ManageMe</h2>
         <form>
           <div className="form-group">
-            <label htmlFor='username'>USERNAME:</label> {/* Add a label for the username input */}
+            <label htmlFor='username'>USERNAME:</label>
             <input type="text" id="username" name="username"/>
           </div>
           <div className="form-group">
-            <label htmlFor='password'>PASSWORD:</label> {/* Add a label for the password input */}
+            <label htmlFor='password'>PASSWORD:</label>
             <input type="password" id="password" name="password"/>
           </div>
         </form>
@@ -59,8 +35,6 @@ const Login = () => {
     </div>
   );
 }
-
-
 
 export default Login;
 
