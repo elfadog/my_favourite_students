@@ -30,14 +30,14 @@ body {
 
 .dashboard-container {
   height: 100vh;
-  /* display: flex;
-    flex-direction: column; */
+  display: flex;
+    flex-direction: column;
   /* display: grid;
-    grid-template-rows: 5% auto;
-    grid-template-columns: 10% auto;
+    grid-template-rows: 10% auto;
+    grid-template-columns: 20% auto;
     grid-template-areas: 
         'banner banner'
-        'nav main'; */
+        'main main'; */
 }
 
 .dashboard-container:hover {
@@ -50,7 +50,7 @@ body {
   grid-area: banner;
   color: #ffffff;
   background: #6600ff;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #6600ff;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -58,12 +58,30 @@ body {
   width: 100vw;
 }
 
-.nav {
-  grid-area: nav;
-  background-color: #8534ff;
+.left-banner {
+  display: flex;
+  flex-direction: row;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  top: 10%;
+  width: 20%;
+  height: 100%;
+  background-color: #333;
   color: white;
-  border: 2px solid #000000;
-  cursor: pointer;
+  position: fixed;
+  left: -20%;
+  transition: left 0.3s ease-in-out;
+}
+
+.sidebar.open {
+  left: 0;
 }
 
 aside {
@@ -73,14 +91,14 @@ aside {
   box-shadow: 0px 10px 30px 10px rgba(0, 0, 0, 1);
 }
 
-.main {
+.content {
   grid-area: main;
   padding: 2%;
 }
 
 button {
+  height: fit-content;
   background-image: url("./logo.png");
-  color: white;
   border: none;
   cursor: pointer;
 }
