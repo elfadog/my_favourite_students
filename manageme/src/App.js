@@ -5,7 +5,7 @@
 // function App() {
 //   return (
 //     <div className='grid-container'> <DropMenu /> </div>
-  
+
 //   );
 // }
 
@@ -13,19 +13,20 @@
 
 // App.js or another component
 
-import React from 'react';
-import Login from './Pages/Dashboard/login/Login';
+import React from "react";
+import Login from "./Pages/Dashboard/login/Login";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 function App() {
   return (
     <div className="App">
       <Login />
+      {/* <Dashboard /> */}
     </div>
   );
 }
 
 export default App;
-
 
 // import React, { useEffect } from 'react';
 // import gsap from 'gsap'; // Import GSAP
