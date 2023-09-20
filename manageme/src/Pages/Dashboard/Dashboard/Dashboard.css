@@ -13,9 +13,9 @@
 }
 
 h2 {
-  font-family: "MuseoModerno-Regular";
+  font-family: "MuseoModerno-Regular", sans-serif;
   font-size: 2rem;
-  color: black;
+  color: white;
 }
 
 body {
