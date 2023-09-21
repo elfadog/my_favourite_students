@@ -9,7 +9,7 @@ const AppRoutes = () => {
     <React.StrictMode>
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Login />} exact/>
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Support" element={<Support />} />
         </Routes>
