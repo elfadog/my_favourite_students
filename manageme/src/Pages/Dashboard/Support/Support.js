@@ -1,9 +1,12 @@
-import React from "react";
+import React from 'react';
+import Icon from './Icon';
 
 const Support = () => {
-    return(
-        <div>Support</div>
-    );
+    return (
+      <div>
+        <Icon/>
+      </div>
+    )
 }
 
-export default Support;
+export default Support
