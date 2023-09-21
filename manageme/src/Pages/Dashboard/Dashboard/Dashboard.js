@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
+import logo from "./logo.png";
 
 // Sidebar component
 function Sidebar({ isOpen, toggleSidebar }) {
@@ -28,7 +29,7 @@ function Dashboard() {
       {/* Sidebar */}
         <div className="banner">
           <div className="left-banner">
-            <button onClick={toggleSidebar}></button>
+            <button onClick={toggleSidebar} style={{backgroundImage: `url(${logo})`}}></button>
             <h2>ManageMe</h2>
           </div>
           <div className="right-banner">
@@ -36,9 +37,9 @@ function Dashboard() {
           </div>
         </div>
         <div className="main">
-          <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-          <div className="content">
-            <p>content</p>
+        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+  <div className={`content ${isSidebarOpen ? 'open' : ''}`}>
+    <p>content</p>
           </div>
         </div>
       </div>
