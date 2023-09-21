@@ -1,24 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {Router, Route, Switch} from 'react-dom';
+import './index';
+import Login from './Pages/Dashboard/login/Login';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard'
+import Support from './Pages/Dashboard/Support/Support';
 
-import './index.css';
-
-import Dashboard from './Dashboard';
-import Support from './Support';
-
-const path = window.location.pathname
-
-ReactDOM.render(
+const Routes = () =>{
+  return(
   <React.StrictMode>
-    {path.indexOf('/Support') === -1? <Dashboard/> : < Support/>}
+    <Router>
+      <Switch>
+        <Route path = "/" exact element = {<Login/>}/>
+      </Switch>
+    </Router>
   </React.StrictMode>
-);
-
-
-export default function Routes() {
-  return (
-    <div>
-      
-    </div>
-  )
+  );
 }
+
+export default Routes
+
+
