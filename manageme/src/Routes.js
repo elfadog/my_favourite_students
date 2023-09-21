@@ -10,7 +10,15 @@ const Routes = () =>{
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route path = "/" exact element = {<Login/>}/>
+        <Route path = "/" exact>
+          <Login/>
+        </Route>
+        <Route path = "/admin">
+          <Dashboard/>
+        </Route>
+        <Route path = "/help">
+          <Support/>
+        </Route>
       </Switch>
     </Router>
   </React.StrictMode>
