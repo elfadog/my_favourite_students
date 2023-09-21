@@ -31,7 +31,7 @@ body {
 .dashboard-container {
   height: 100vh;
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
   /* display: grid;
     grid-template-rows: 10% auto;
     grid-template-columns: 20% auto;
@@ -66,6 +66,7 @@ body {
 .main {
   display: flex;
   flex-direction: row;
+  width: 100%; /* Ensure main takes the full width */
 }
 
 .sidebar {
@@ -84,6 +85,10 @@ body {
   left: 0;
 }
 
+.sidebar.open + .content {
+  margin-left: 20%; /* Push content to the right when sidebar is open */
+}
+
 aside {
   background-color: #8534ff;
   color: #ffffff;
@@ -92,17 +97,21 @@ aside {
 }
 
 .content {
-  grid-area: main;
-  padding: 2%;
+  flex-grow: 1; /* Allow content to take available space */
+  transition: margin-left 0.3s ease-in-out; /* Smooth transition */
 }
 
 button {
-  height: fit-content;
-  background-image: url("./logo.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   border: none;
   cursor: pointer;
+  width: 50px;
+  height: 50px;
 }
 
 button:hover {
-  background-color: #0056b3;
+  opacity: 0.7;
 }
