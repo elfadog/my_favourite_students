@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import gsap from 'gsap';
 import './Login.css';
-import logo from './logo.png'; // Import the logo image
+import logo from './logo.png';
 
 const Login = () => {
+  const navigate = useNavigate(); // Get the navigate function
   useEffect(() => {
     const loginBox = document.querySelector('.login-box');
     const svg = document.querySelector('.background-svg');
@@ -14,6 +16,10 @@ const Login = () => {
       .to(loginBox, { duration: 1, opacity: 1, ease: 'power1.out' });
     tl.play();
   }, []);
+  const handleLoginClick = () => {
+    // You can also add your login logic here
+    navigate('/Dashboard'); // Navigate to the dashboard when the button is clicked
+  };
 
   return (
     <div className="login-container">
@@ -30,7 +36,7 @@ const Login = () => {
             <input type="password" id="password" name="password"/>
           </div>
         </form>
-        <button type="submit">Login</button>
+        <button type="button" onClick={handleLoginClick}>Login</button>
       </div>
     </div>
   );
