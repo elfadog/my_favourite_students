@@ -1,30 +1,21 @@
 import React from 'react';
-import {Router, Route, Switch} from 'react-dom';
-import './index';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Pages/Dashboard/login/Login';
-import Dashboard from './Pages/Dashboard/Dashboard/Dashboard'
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Support from './Pages/Dashboard/Support/Support';
 
-const Routes = () =>{
-  return(
-  <React.StrictMode>
-    <Router>
-      <Switch>
-        <Route path = "/" exact>
-          <Login/>
-        </Route>
-        <Route path = "/admin">
-          <Dashboard/>
-        </Route>
-        <Route path = "/help">
-          <Support/>
-        </Route>
-      </Switch>
-    </Router>
-  </React.StrictMode>
+const AppRoutes = () => {
+  return (
+    <React.StrictMode>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/Support" element={<Support />} />
+        </Routes>
+      </Router>
+    </React.StrictMode>
   );
-}
+};
 
-export default Routes
-
-
+export default AppRoutes;
