@@ -17,10 +17,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "client": "cd manageme && npm run start",
     "server": "cd server && node server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
@@ -43,7 +39,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ],
-    "proxy": "http://localhost:3002"
+    "proxy": "http://localhost:3000"
   },
   "devDependencies": {
     "concurrently": "^8.2.1"
