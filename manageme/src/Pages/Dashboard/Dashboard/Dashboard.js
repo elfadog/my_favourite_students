@@ -7,7 +7,7 @@ import inventoryIcon from "./Icons/inventoryIcon.png";
 import mailboxIcon from "./Icons/mailboxIcon.png";
 import invoicesIcon from "./Icons/invoicesIcon.png";
 import reportsIcon from "./Icons/reportsIcon.png";
-import MyCalendar from "./Icons/MyCalendar";
+import MyCalendar from "./MyCalendar";
 // import supervisedUserIcon from "./Icons/supervisedUserIcon.png";
 
 const menuItems = [
