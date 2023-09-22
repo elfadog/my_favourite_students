@@ -7,6 +7,7 @@ import inventoryIcon from "./Icons/inventoryIcon.png";
 import mailboxIcon from "./Icons/mailboxIcon.png";
 import invoicesIcon from "./Icons/invoicesIcon.png";
 import reportsIcon from "./Icons/reportsIcon.png";
+import MyCalendar from "./MyCalendar";
 // import supervisedUserIcon from "./Icons/supervisedUserIcon.png";
 
 const menuItems = [
@@ -67,6 +68,12 @@ function Dashboard() {
         <div className={`content ${isSidebarOpen ? "open" : ""}`}>
           <p>content</p>
         </div>
+        {/* New Container */}
+        <div className="new-container">
+          <p>MyCalendar</p>
+          {/* <MyCalendar /> // Entering this line causes a problem in displaying
+          the components */}
+        </div>
       </div>
     </div>
   );
@@ -78,3 +85,4 @@ export default Dashboard;
 // 1: add objects to 'content' area
 // 2: add the account icon with a dropdown that contains(account setting and logout options)
 // 3: make the menu items highlight depending on which page is selected (Managing State)
+// 4: add onClick for opening mailbox (route to the mailbox page)

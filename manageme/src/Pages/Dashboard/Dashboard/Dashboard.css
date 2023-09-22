@@ -145,3 +145,53 @@ button:hover {
 p {
   margin: 0;
 }
+
+/* Calendar container */
+.calendar {
+  width: 60%; /* Set the desired width */
+  height: 60vh; /* Set the desired height */
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+
+/* Calendar styles */
+.react-big-calendar {
+  width: 70%;
+  max-width: 70vh; /* Adjust the maximum width as needed */
+  margin: 0 auto;
+}
+
+/* Calendar event styles */
+.rbc-event {
+  background-color: #8b44f5; /* Change this to your preferred event color */
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* Calendar event popover styles */
+.rbc-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.new-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh; /* Set the desired height */
+  width: 70%; /* Set the desired width */
+}
+
+
+
+
