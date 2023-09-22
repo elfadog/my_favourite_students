@@ -8,6 +8,7 @@ import mailboxIcon from "./Icons/mailboxIcon.png";
 import invoicesIcon from "./Icons/invoicesIcon.png";
 import reportsIcon from "./Icons/reportsIcon.png";
 import MyCalendar from "./MyCalendar";
+
 // import supervisedUserIcon from "./Icons/supervisedUserIcon.png";
 
 const menuItems = [
@@ -40,7 +41,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
   );
 }
 
-function Dashboard() {
+const Dashboard = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -71,13 +72,13 @@ function Dashboard() {
         {/* New Container */}
         <div className="new-container">
           <p>MyCalendar</p>
-          {/* <MyCalendar /> // Entering this line causes a problem in displaying
-          the components */}
+          <MyCalendar />
+          {/* Entering this ^ line causes a problem in displaying the components */}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Dashboard;
 
