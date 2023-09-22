@@ -68,6 +68,10 @@ body {
   flex-direction: row;
 }
 
+.right-banner {
+  padding: 0 1rem;
+}
+
 .main {
   background: #ffffff;
   display: flex;
@@ -103,6 +107,15 @@ ul {
   cursor: pointer;
 }
 
+.menu-item:hover {
+  /* opacity: 0.7; */
+  filter:brightness(1.2)
+}
+
+.menu-item-active {
+  background-color: #6331ad;
+}
+
 .sidebar {
   background-color: #6600ff;
   /* grid-area: sidebar; */
@@ -127,18 +140,20 @@ ul {
   transition: margin-left 0.3s ease-in-out; /* Smooth transition */
 }
 
-button {
+.sidebar-toggle-button {
+  margin-top: 25pX;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   border: none;
   cursor: pointer;
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 50px;
+  height: 50px;
 }
 
-button:hover {
+.sidebar-toggle-button:hover {
+  background-color: transparent;
   opacity: 0.7;
 }
 

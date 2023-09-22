@@ -48,13 +48,14 @@ const MyCalendar = () => {
           dateFormat="MM/dd/yyyy"
         />
       </div>
-      <Calendar
+      {/* <Calendar
         localizer={localizer}
         events={events}
         startAccessor="start"
         endAccessor="end"
         style={{ margin: "20px" }}
-      />
+      /> */}
+      {/* <Calendar /> */}
     </div>
   );
 };
