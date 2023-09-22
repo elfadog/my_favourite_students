@@ -7,6 +7,7 @@ import inventoryIcon from "./Icons/inventoryIcon.png";
 import mailboxIcon from "./Icons/mailboxIcon.png";
 import invoicesIcon from "./Icons/invoicesIcon.png";
 import reportsIcon from "./Icons/reportsIcon.png";
+import MyCalendar from "./Icons/MyCalendar";
 // import supervisedUserIcon from "./Icons/supervisedUserIcon.png";
 
 const menuItems = [
@@ -67,10 +68,16 @@ function Dashboard() {
         <div className={`content ${isSidebarOpen ? "open" : ""}`}>
           <p>content</p>
         </div>
+        {/* New Container */}
+        <div className="new-container">
+          <p>MyCalendar</p>
+          <MyCalendar /> // Entering this line causes a problem in displaying the components
+        </div>
       </div>
     </div>
   );
 }
+
 
 export default Dashboard;
 
