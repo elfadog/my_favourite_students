@@ -55,3 +55,19 @@
 .element-container:hover .text {
   opacity: 1; /* Show the text on hover */
 }
+
+.faq-container {
+  background-color: #ffffff; /* White background */
+  padding: 10px; /* Add padding as needed */
+  border: 1px solid #e0e0e0; /* Add a border if desired */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  margin-bottom: 10px; /* Add margin between FAQ items */
+}
+
+.title-container {
+  background-color: #8a51d5; /* White background */
+  padding: 10px; /* Add padding as needed */
+  border: 1px solid #e0e0e0; /* Add a border if desired */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  margin-bottom: 10px; /* Add margin between FAQ items */
+}
