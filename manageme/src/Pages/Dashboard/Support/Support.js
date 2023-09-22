@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icon from './Icon';
 
 const Support = () => {
+  const [isTileVisible, setTileVisibility] = useState(false);
+
+  const toggleTile = () => {
+    setTileVisibility(!isTileVisible);
+  };
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', position: 'absolute', top: '50px', left: '30px' }}>
       <strong className='title-container'>Frequently Asked Questions</strong>
-      <Icon />
+      <div className="element-container" onClick={toggleTile}>
+        <div className="circle"></div>
+        <Icon />
+      </div>
+      {isTileVisible && (
+        <div className="white-tile">
+           <div className="purple-strip"></div>
+          <div className="messages">
+            {/* Add your chat messages here */}
+            <p>Hi how can I help?</p>
+            <p>I need help with this!</p>
+            {/* Add more messages as needed */}
+          </div>
+          {/* Content of the white tile */}
+        </div>
+      )}
       <ul style={{ listStyle: 'none', padding: 0 }}>
         <li>
           <div className="faq-container">
