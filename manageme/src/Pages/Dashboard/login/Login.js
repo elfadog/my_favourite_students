@@ -33,21 +33,21 @@ const Login = () => {
   }, []);
 
   const handleLoginClick = async () => {
-  try {
-    const res = await axios.post('http://localhost:3001/login', { username, password });
-    if (res.data.success) { // assuming your server responds with a success field
-      console.log('Login Successful', res.data);
-      navigate('/Dashboard');
-    } else {
-      throw new Error(res.data.error || 'Login failed');
+    try {
+      const res = await axios.post('http://localhost:3001/login', { username, password });
+      if (res.data.success) {
+        console.log('Login Successful', res.data);
+        navigate('/Dashboard');
+      } else {
+        throw new Error(res.data.error || 'Login failed');
+      }
+    } catch (err) {
+      console.error('Login Error', err.message);
+      setError(err.message);
+      setPassword('');
+      setUsername('');
+      playAnimation();
     }
-  } catch (err) {
-    console.error('Login Error', err.message);
-    setError(err.message);
-    setPassword('');
-    setUsername('');
-    playAnimation();
-  }
 };
 
   return (
