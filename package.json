@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "manageme",
   "version": "0.1.0",
   "private": true,
@@ -22,9 +21,9 @@
   "scripts": {
     "client": "cd manageme && npm run start",
     "server": "cd server && node server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
-  }
-  ,
+    "dev": "npm run killports && concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "killports": "lsof -ti :3000,3001 | if [ $(wc -l) -gt 0 ]; then xargs kill -9; fi"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -41,14 +40,10 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "proxy": "http://localhost:3000"
+    ]
   },
+  "proxy": "http://localhost:3000",
   "devDependencies": {
     "concurrently": "^8.2.1"
-=======
-  "dependencies": {
-    "date-fns": "^2.30.0"
->>>>>>> eba858f754ecf98f5f9ded8b4e1d6b5f3f36be87
   }
 }
