@@ -9,6 +9,7 @@ import invoicesIcon from "./Icons/invoicesIcon.png";
 import reportsIcon from "./Icons/reportsIcon.png";
 import MyCalendar from "./MyCalendar";
 import supervisedUserIcon from "./Icons/supervisedUserIcon.png";
+import arrowDropDown from "./Icons/arrowDropDown.png";
 
 const menuItems = [
   { text: "Dashboard", icon: dashboardIcon },
@@ -71,10 +72,10 @@ const Dashboard = () => {
           <h2>ManageMe</h2>
         </div>
         <div className="right-banner">
-          {/* <img
+          <img
             className="account-icon"
-            src={logo} alt="acccountIcon"
-          ></img> */}
+            src={supervisedUserIcon} alt="acccountIcon"
+          ></img>
           <p>account area</p>
         </div>
       </div>
