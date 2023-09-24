@@ -11,7 +11,6 @@ const Login = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-
   const playAnimation = () => {
     const loginBox = document.querySelector('.login-box');
     const svg = document.querySelector('.background-svg');
@@ -32,39 +31,59 @@ const Login = () => {
     playAnimation();
   }, []);
 
-  const handleLoginClick = async () => {
-  try {
-    const res = await axios.post('http://localhost:3001/login', { username, password });
-    if (res.data.success) { // assuming your server responds with a success field
-      console.log('Login Successful', res.data);
-      navigate('/Dashboard');
-    } else {
-      throw new Error(res.data.error || 'Login failed');
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleLoginClick();
     }
-  } catch (err) {
-    console.error('Login Error', err.message);
-    setError(err.message);
-    setPassword('');
-    setUsername('');
-    playAnimation();
-  }
-};
+  };
+
+  const handleLoginClick = async () => {
+    try {
+      const res = await axios.post('http://localhost:3001/login', { username, password });
+      if (res.data.success) {
+        console.log('Login Successful', res.data);
+        navigate('/Dashboard');
+      } else {
+        throw new Error(res.data.error || 'Login failed');
+      }
+    } catch (err) {
+      console.error('Login Error', err.message);
+      setError(err.message);
+      setPassword('');
+      setUsername('');
+      playAnimation();
+    }
+  };
 
   return (
     <div className="login-container">
       <div className="login-box">
         <img src={logo} alt="Logo" className="logo" />
-        <h2>ManageMxe</h2>
+        <h2>ManageMe</h2>
         <form onSubmit={(e) => e.preventDefault()}>
           <div className="form-group">
             <label htmlFor='username'>USERNAME:</label>
-            <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              onKeyPress={handleKeyPress} // Added this line
+            />
           </div>
           <div className="form-group">
             <label htmlFor='password'>PASSWORD:</label>
-            <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onKeyPress={handleKeyPress} // Added this line
+            />
           </div>
-          {error && <div className="error-message">{error}</div>} {/* Display errors */}
+          {error && <div className="error-message">{error}</div>}
         </form>
         <button type="button" onClick={handleLoginClick}>
           Login
