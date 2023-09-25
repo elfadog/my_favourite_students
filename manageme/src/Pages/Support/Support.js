@@ -15,8 +15,8 @@ const Support = () => {
       <div className="banner">
         <div className="left-banner">
           <button
-            className="invert-effect"
-            style={{ backgroundImage: `url(${logo})` }}
+            className="invert-effect sidebar-toggle-button"
+            style={{ backgroundImage: `url(${logo})`}}
           ></button>
           <h2>ManageMe</h2>
         </div>
@@ -30,8 +30,9 @@ const Support = () => {
           flexDirection: "column",
           alignItems: "flex-start",
           position: "absolute",
-          top: "50px",
+          top: "80px",
           left: "30px",
+          margintop: "50px"
         }}
       >
         <strong className="title-container">Frequently Asked Questions</strong>
@@ -97,6 +98,13 @@ const Support = () => {
             </div>
           </li>
           <li>
+            <div className="faq-container">
+              <strong>Q: What happens after the free trial period</strong>
+              <p>
+                A: You will be notified that you trial has ended and you will
+                need to make a subscription to contine using the app.
+              </p>
+            </div>
             <div className="faq-container">
               <strong>Q: What happens after the free trial period</strong>
               <p>
