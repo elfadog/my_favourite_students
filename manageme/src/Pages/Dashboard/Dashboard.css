@@ -54,7 +54,7 @@ body {
 .banner {
   grid-area: banner;
   color: #ffffff;
-  background: #6600ff;
+  background: #783cc8;
   height: 3.75rem;
   display: flex;
   flex-direction: row;
@@ -109,15 +109,15 @@ ul {
 
 .menu-item:hover {
   /* opacity: 0.7; */
-  filter:brightness(1.2)
+  filter: brightness(1.2);
 }
 
 .menu-item-active {
-  background-color: #6331ad;
+  background-color: #783cc8;
 }
 
 .sidebar {
-  background-color: #6600ff;
+  background-color: #783cc8;
   /* grid-area: sidebar; */
   width: 12rem;
   height: 100%;
@@ -141,7 +141,7 @@ ul {
 }
 
 .sidebar-toggle-button {
-  margin-top: 25pX;
+  margin-top: 25px;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
@@ -170,7 +170,6 @@ p {
   background-color: #ffffff;
   padding: 20px;
 }
-
 
 /* Calendar styles */
 .react-big-calendar {
@@ -206,7 +205,3 @@ p {
   height: 70vh; /* Set the desired height */
   width: 70%; /* Set the desired width */
 }
-
-
-
-
