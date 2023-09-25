@@ -105,6 +105,13 @@ const Support = () => {
                 need to make a subscription to contine using the app.
               </p>
             </div>
+            <div className="faq-container">
+              <strong>Q: What happens after the free trial period</strong>
+              <p>
+                A: You will be notified that you trial has ended and you will
+                need to make a subscription to contine using the app.
+              </p>
+            </div>
           </li>
           {/* Add more FAQs and answers as needed */}
         </ul>
