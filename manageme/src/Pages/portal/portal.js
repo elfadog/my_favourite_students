@@ -14,54 +14,56 @@ function Portal() {
     ));
   };
 
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
   // Sidebar component
-function Sidebar({ isOpen, toggleSidebar }) {
-    const [selectedIndex, setSelectedIndex] = useState(0);
+  // function Sidebar({ isOpen, toggleSidebar }) {
+  //   const [selectedIndex, setSelectedIndex] = useState(0);
   
-    return (
-      <div className={`sidebar ${isOpen ? "open" : ""}`}>
-        <ul>
-          {menuItems.map((item, index) => (
-            <li key={index}>
-              <div
-                className={
-                  selectedIndex === index
-                    ? "menu-item menu-item-active"
-                    : "menu-item"
-                }
-                onClick={() => {
-                  setSelectedIndex(index);
-                }}
-              >
-                <div
-                  className="menu-icon"
-                  style={{ backgroundImage: `url(${item.icon})` }}
-                ></div>
-                <span>{item.text}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
+  //   return (
+  //     <div className={`sidebar-portal ${isOpen ? "open" : ""}`}>
+  //       <ul>
+  //         {menuItems.map((item, index) => (
+  //           <li key={index}>
+  //             <div
+  //               className={
+  //                 selectedIndex === index
+  //                   ? "menu-item menu-item-active"
+  //                   : "menu-item"
+  //               }
+  //               onClick={() => {
+  //                 setSelectedIndex(index);
+  //               }}
+  //             >
+  //               <div
+  //                 className="menu-icon"
+  //                 style={{ backgroundImage: `url(/* link your icon image here */)`, }}
+  //               ></div>
+  //               <span>{item.text}</span>
+  //             </div>
+  //           </li>
+  //         ))}
+  //       </ul>
+  //     </div>
+  //   );
+  // }
   
   return (
-    <div>
-
-<div className="banner">
+    <div className="dashboard-container-portal">
+      <div className="banner-portal">
         <div className="left-banner">
           <button
-            className="invert-effect sidebar-toggle-button"
-            onClick={toggleSidebar}
-            style={{ backgroundImage: `url(${logo})` }}
+            className="invert-effect-portal sidebar-toggle-button"
+            onClick={() => setSidebarOpen(!isSidebarOpen)}
+            style={{ backgroundImage: `url(/* link your logo image here */)` }}
           ></button>
           <h2>ManageMe</h2>
         </div>
         <div className="right-banner">
           <img
             className="account-icon"
-            src={supervisedUserIcon} alt="acccountIcon"
+            // src={/* link your account icon image here */} 
+            alt="accountIcon"
           ></img>
           <p>account area</p>
         </div>

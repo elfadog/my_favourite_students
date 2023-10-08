@@ -28,6 +28,13 @@ h2 {
   background-color: #f4f4f4;
 }
 
+.dashboard-container-portal {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+}
+
 .banner-portal {
   background-color: #783cc8;
   padding: 1rem;
@@ -45,6 +52,10 @@ h2 {
   height: 100%;
   padding-top: 60px;
   transition: left 0.3s ease;
+}
+
+.sidebar-portal.open {
+  left: 0;
 }
 
 .sidebar-portal ul {
@@ -138,4 +149,19 @@ h2 {
 
 .send-btn-portal:hover {
   background-color: #682cb7;
+}
+.menu-item-active {
+  background-color: #555;
+  color: white;
+}
+
+.sidebar-toggle-button {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.account-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
 }

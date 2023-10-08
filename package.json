@@ -2,23 +2,56 @@
   "name": "manageme",
   "version": "0.1.0",
   "private": true,
+  "description": "",
+  "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.5.0",
+    "axios": "^1.5.1",
+    "classnames": "^2.3.2",
+    "clsx": "^1.2.1",
     "cors": "^2.8.5",
+    "csstype": "^3.1.2",
+    "date-arithmetic": "^4.1.0",
     "date-fns": "^2.30.0",
+    "dayjs": "^1.11.10",
+    "dequal": "^2.0.3",
+    "dom-helpers": "^5.2.1",
+    "eslint-config-react-app": "^7.0.1",
+    "globalize": "^0.1.1",
     "gsap": "^3.12.2",
+    "invariant": "^2.2.4",
+    "js-tokens": "^4.0.0",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
+    "loose-envify": "^1.4.0",
+    "luxon": "^3.4.3",
+    "memoize-one": "^6.0.0",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43",
     "mongoose": "^7.5.2",
+    "object-assign": "^4.1.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-app": "^1.1.2",
     "react-big-calendar": "^1.8.4",
     "react-datepicker": "^4.18.0",
     "react-dom": "^18.2.0",
+    "react-fast-compare": "^3.2.2",
+    "react-is": "^16.13.1",
+    "react-lifecycles-compat": "^3.0.4",
+    "react-onclickoutside": "^6.13.0",
+    "react-overlays": "^5.2.1",
+    "react-popper": "^2.3.0",
     "react-router": "^6.16.0",
     "react-router-dom": "^6.16.0",
     "react-scripts": "^5.0.1",
-    "web-vitals": "^2.1.4"
+    "regenerator-runtime": "^0.14.0",
+    "scheduler": "^0.23.0",
+    "uncontrollable": "^7.2.1",
+    "warning": "^4.0.3",
+    "web-vitals": "^3.5.0"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
@@ -29,6 +62,9 @@
     "server": "cd server && node server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -45,9 +81,9 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "proxy": "http://localhost:3002"
+    ]
   },
+  "proxy": "http://localhost:3002",
   "devDependencies": {
     "concurrently": "^8.2.1"
   }
