@@ -36,26 +36,26 @@ h2 {
 }
 
 .banner-portal {
-  background-color: #783cc8;
-  padding: 1rem;
-  color: white;
+  grid-area: banner;
+  color: #ffffff;
+  background: #783cc8;
+  height: 3.75rem;
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  width: 100vw;
 }
 
 .sidebar-portal {
-  width: 250px;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  left: -250px;
-  height: 100%;
-  padding-top: 60px;
+  background-color: #783cc8;
+  width: 0;
+  overflow: hidden;
   transition: left 0.3s ease;
 }
 
 .sidebar-portal.open {
-  left: 0;
+  width: 250px;
 }
 
 .sidebar-portal ul {
@@ -164,4 +164,8 @@ h2 {
   width: 32px;
   height: 32px;
   border-radius: 50%;
+}
+
+.main-sidebar-jobs {
+  display: flex;
 }

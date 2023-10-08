@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import JobStatus from './jobStatus';
+import Sidebar from './sidebar';
 import './portal.css';
+import accountIcon from './Icons/supervisedUserIcon.png';
+import logo from './Icons/logo.png';
 
 function Portal() {
   const [jobs, setJobs] = useState([
@@ -16,64 +19,36 @@ function Portal() {
 
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-  // Sidebar component
-  // function Sidebar({ isOpen, toggleSidebar }) {
-  //   const [selectedIndex, setSelectedIndex] = useState(0);
-  
-  //   return (
-  //     <div className={`sidebar-portal ${isOpen ? "open" : ""}`}>
-  //       <ul>
-  //         {menuItems.map((item, index) => (
-  //           <li key={index}>
-  //             <div
-  //               className={
-  //                 selectedIndex === index
-  //                   ? "menu-item menu-item-active"
-  //                   : "menu-item"
-  //               }
-  //               onClick={() => {
-  //                 setSelectedIndex(index);
-  //               }}
-  //             >
-  //               <div
-  //                 className="menu-icon"
-  //                 style={{ backgroundImage: `url(/* link your icon image here */)`, }}
-  //               ></div>
-  //               <span>{item.text}</span>
-  //             </div>
-  //           </li>
-  //         ))}
-  //       </ul>
-  //     </div>
-  //   );
-  // }
-  
   return (
     <div className="dashboard-container-portal">
+
       <div className="banner-portal">
         <div className="left-banner">
           <button
             className="invert-effect-portal sidebar-toggle-button"
             onClick={() => setSidebarOpen(!isSidebarOpen)}
-            style={{ backgroundImage: `url(/* link your logo image here */)` }}
+            style={{ backgroundImage: `url(${logo})` }}
           ></button>
           <h2>ManageMe</h2>
         </div>
         <div className="right-banner">
           <img
             className="account-icon"
-            // src={/* link your account icon image here */} 
-            alt="accountIcon"
+            src={accountIcon} alt="accountIcon" 
           ></img>
           <p>account area</p>
         </div>
       </div>
-      <ul>
-        {jobs.map(job => (
-          <JobStatus key={job.id} job={job} onSendMessage={sendMessage} />
-        ))}
-      </ul>
+      <div className='main-sidebar-jobs'>
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={() => setSidebarOpen(!isSidebarOpen)} />
+      <div className="job-list-container">
+      {jobs.map(job => (
+        <JobStatus key={job.id} job={job} onSendMessage={sendMessage} />
+      ))}
     </div>
+  </div>
+</div>
+
   );
 }
 
