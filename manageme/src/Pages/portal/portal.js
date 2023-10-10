@@ -20,9 +20,8 @@ function Portal() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="dashboard-container-portal">
-
-      <div className="banner-portal">
+<div className="dashboard-container-portal">
+  <div className="banner-portal">
         <div className="left-banner">
           <button
             className="invert-effect-portal sidebar-toggle-button"
@@ -31,15 +30,19 @@ function Portal() {
           ></button>
           <h2>ManageMe</h2>
         </div>
-        <div className="right-banner">
-          <img
+        <div className="portal-right-banner">
+          <button className="profile-button">
+            <p>Profile</p>
+          </button>
+
+          {/* <img
             className="account-icon"
             src={accountIcon} alt="accountIcon" 
           ></img>
-          <p>account area</p>
+          <p>Profile</p> */}
         </div>
-      </div>
-      <div className='main-sidebar-jobs'>
+    </div>
+    <div className='main-sidebar-jobs'>
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={() => setSidebarOpen(!isSidebarOpen)} />
       <div className="job-list-container">
       {jobs.map(job => (

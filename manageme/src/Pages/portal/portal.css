@@ -13,19 +13,10 @@
   font-style: normal;
 }
 
-/* Type Selectors (like h2) and their corresponding styling remain unchanged */
 h2 {
   font-family: "MuseoModerno-Regular", sans-serif;
   font-size: 2rem;
   color: white;
-}
-
-/* Adjusting Class Selectors */
-.dashboard-container-portal {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #f4f4f4;
 }
 
 .dashboard-container-portal {
@@ -45,6 +36,11 @@ h2 {
   align-items: center;
   justify-content: space-between;
   width: 100vw;
+}
+.portal-right-banner {
+  display: flex;
+  align-items: center;
+  padding: 0px 0px;
 }
 
 .sidebar-portal {
@@ -166,6 +162,18 @@ h2 {
   border-radius: 50%;
 }
 
+.profile-button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 5px 5px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 60px;
+  align-content: center;
+}
+
 .main-sidebar-jobs {
   display: flex;
+  height: 100vh;
 }
