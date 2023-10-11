@@ -69,7 +69,36 @@ body {
 }
 
 .right-banner {
-  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.account-icon {
+  margin: 10px 0;
+}
+
+.arrow-drop-down-button {
+  margin: 12px 1rem;
+}
+
+.arrow-drop-down-button:hover {
+  filter: opacity(0.5);
+}
+
+.account-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 80px;
+  left: -20%;
+  margin-top: 50px;
+  border: 2px solid black;
+}
+
+.account-panel.account-panel-open {
+  left: 300px;
 }
 
 .main {
@@ -109,7 +138,7 @@ ul {
 
 .menu-item:hover {
   /* opacity: 0.7; */
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 .menu-item-active {
@@ -127,11 +156,11 @@ ul {
   transition: left 0.3s ease-in-out;
 }
 
-.sidebar.open {
+.sidebar.sidebar-open {
   left: 0;
 }
 
-.sidebar.open + .content {
+.sidebar.sidebar-open + .content {
   margin-left: 12rem; /* Push content to the right when sidebar is open */
 }
 

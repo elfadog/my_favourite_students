@@ -20,12 +20,14 @@ const menuItems = [
   { text: "Reports", icon: reportsIcon },
 ];
 
+const AccountPanelItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+
 // Sidebar component
-function Sidebar({ isOpen, toggleSidebar }) {
+function Sidebar({ isSidebarOpen, toggleSidebar }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <div className={`sidebar ${isOpen ? "open" : ""}`}>
+    <div className={`sidebar ${isSidebarOpen ? "sidebar-open" : ""}`}>
       <ul>
         {menuItems.map((item, index) => (
           <li key={index}>
@@ -48,6 +50,26 @@ function Sidebar({ isOpen, toggleSidebar }) {
           </li>
         ))}
       </ul>
+    </div>  
+  );
+}  
+
+// Account panel component
+function AccountPanel( isAccountPanelOpen, toggleAccountPanel) {
+
+  const dropdownItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+
+  return (
+    <div className={`account-panel ${!isAccountPanelOpen ? "account-panel-open" : ""}`}>
+      {isAccountPanelOpen && (
+        <ul className="AccountPanelItems">
+          {dropdownItems.map((item, index) => (
+            <li key={index}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
@@ -59,9 +81,14 @@ const Dashboard = () => {
     setSidebarOpen(!isSidebarOpen);
   };
 
+  const [isAccountPanelOpen, setAccountPanelOpen] = useState(false);
+
+  const toggleAccountPanel = () => {
+    setAccountPanelOpen(!isAccountPanelOpen);
+  };
+
   return (
     <div className="dashboard-container">
-      {/* Sidebar */}
       <div className="banner">
         <div className="left-banner">
           <button
@@ -74,14 +101,19 @@ const Dashboard = () => {
         <div className="right-banner">
           <img
             className="account-icon"
-            src={supervisedUserIcon} alt="acccountIcon"
-          ></img>
-          <p>account area</p>
+            src={supervisedUserIcon} alt="acccountIcon"> 
+          </img>
+          <img
+            className="arrow-drop-down-button"
+            src={arrowDropDown} alt="arrow Drop Down Button"
+            onClick={toggleAccountPanel}>
+          </img>
+          <AccountPanel isAccountPanelOpen={isAccountPanelOpen} toggleAccountPanel={toggleAccountPanel} />
         </div>
       </div>
       <div className="main">
-        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <div className={`content ${isSidebarOpen ? "open" : ""}`}>
+        <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <div className={`content ${isSidebarOpen ? "sidebar-open" : ""}`}>
           <p>content</p>
         </div>
         {/* New Container */}
