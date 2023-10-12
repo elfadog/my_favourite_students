@@ -84,9 +84,7 @@ const Dashboard = () => {
         <div className={`content ${isSidebarOpen ? "open" : ""}`}>
           <p>content</p>
         </div>
-        {/* New Container */}
-        <div className="new-container">
-          <p>MyCalendar</p>
+        <div className="calendar-container">
           <MyCalendar />
           {/* Entering this ^ line causes a problem in displaying the components */}
         </div>

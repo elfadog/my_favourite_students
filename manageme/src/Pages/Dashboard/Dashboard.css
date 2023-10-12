@@ -198,10 +198,13 @@ p {
   border-radius: 4px;
 }
 
-.new-container {
+/* This is the placement of the calendar container */
+.calendar-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10px;
   height: 70vh; /* Set the desired height */
   width: 70%; /* Set the desired width */
 }
