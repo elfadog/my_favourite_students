@@ -20,7 +20,7 @@ const menuItems = [
   { text: "Reports", icon: reportsIcon },
 ];
 
-const AccountPanelItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+const AccountPanelItems = ["Your Account", "Settings", "Log Out", "Support"];
 
 // Sidebar component
 function Sidebar({ isSidebarOpen, toggleSidebar }) {
@@ -50,26 +50,27 @@ function Sidebar({ isSidebarOpen, toggleSidebar }) {
           </li>
         ))}
       </ul>
-    </div>  
+    </div>
   );
-}  
+}
 
 // Account panel component
-function AccountPanel( isAccountPanelOpen, toggleAccountPanel) {
-
-  const dropdownItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
-
+function AccountPanel({ isAccountPanelOpen, toggleAccountPanel }) {
   return (
-    <div className={`account-panel ${!isAccountPanelOpen ? "account-panel-open" : ""}`}>
-      {isAccountPanelOpen && (
-        <ul className="AccountPanelItems">
-          {dropdownItems.map((item, index) => (
+    <div
+      className={`account-panel ${
+        isAccountPanelOpen ? "account-panel-open" : ""
+      }`}
+    >
+      {
+        <ul>
+          {AccountPanelItems.map((item, index) => (
             <li key={index}>
-              {item}
+              <button className="account-panel-item">{item}</button>
             </li>
           ))}
         </ul>
-      )}
+      }
     </div>
   );
 }
@@ -101,14 +102,19 @@ const Dashboard = () => {
         <div className="right-banner">
           <img
             className="account-icon"
-            src={supervisedUserIcon} alt="acccountIcon"> 
-          </img>
+            src={supervisedUserIcon}
+            alt="acccountIcon"
+          ></img>
           <img
             className="arrow-drop-down-button"
-            src={arrowDropDown} alt="arrow Drop Down Button"
-            onClick={toggleAccountPanel}>
-          </img>
-          <AccountPanel isAccountPanelOpen={isAccountPanelOpen} toggleAccountPanel={toggleAccountPanel} />
+            src={arrowDropDown}
+            alt="arrow Drop Down Button"
+            onClick={toggleAccountPanel}
+          ></img>
+          <AccountPanel
+            isAccountPanelOpen={isAccountPanelOpen}
+            toggleAccountPanel={toggleAccountPanel}
+          />
         </div>
       </div>
       <div className="main">
