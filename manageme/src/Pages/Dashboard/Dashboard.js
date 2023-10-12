@@ -21,6 +21,7 @@ const menuItems = [
   { text: "Mailbox", icon: mailboxIcon },
   { text: "Invoices", icon: invoicesIcon },
   { text: "Reports", icon: reportsIcon },
+  { text: "Calendar", icon: reportsIcon },
 ];
 
 const dashboardContent = [
