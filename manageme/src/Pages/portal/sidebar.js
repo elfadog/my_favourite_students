@@ -7,20 +7,24 @@ function Sidebar({ isOpen, toggleSidebar }) {
 
     useEffect(() => {
         // Fetch menu items from the backend
-        const fetchMenuItems = async () => {
+        const fetchMenuItems = async (req, res) => {
             try {
-                const response = await axios.get('http://yourbackend.com/api/menuItems');
+                const response = await axios.get('http://localhost:3001/api/jobs');
                 setMenuItems(response.data);
             } catch (error) {
-                console.error("Error fetching menu items:", error);
+                console.error("Error fetching jobs:", error);
+                res.status(500).json({ error: 'Internal Server Error' });
             }
         };
 
         fetchMenuItems();
     }, []); // The empty dependency array ensures this useEffect runs only once when the component mounts
 
-    return (
-        <div className={`sidebar-portal ${isOpen ? "open" : ""}`}>
+    console.log(menuItems);
+
+return (
+    <div className={`sidebar-portal ${isOpen ? "open" : ""}`}>
+        {menuItems.length > 0 ? (
             <ul>
                 {menuItems.map((item, index) => (
                     <li key={index}>
@@ -38,13 +42,16 @@ function Sidebar({ isOpen, toggleSidebar }) {
                                 className="menu-icon"
                                 style={{ backgroundImage: `url(${item.icon})` }}
                             ></div>
-                            <span>{item.text}</span>
+                            <span>{item.invoiceNo /* or any other property you have in your documents */}</span>
                         </div>
                     </li>
                 ))}
             </ul>
-        </div>
-    );
-}
+        ) : (
+            <p>No Pending Jobs</p>
+        )}
+    </div>
+);
+        }
 
 export default Sidebar;

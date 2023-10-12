@@ -51,7 +51,8 @@
     "scheduler": "^0.23.0",
     "uncontrollable": "^7.2.1",
     "warning": "^4.0.3",
-    "web-vitals": "^3.5.0"
+    "web-vitals": "^3.5.0",
+    "webpack": "^5.88.2"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
@@ -83,7 +84,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3002",
+  "proxy": "http://localhost:3001",
   "devDependencies": {
     "concurrently": "^8.2.1"
   }

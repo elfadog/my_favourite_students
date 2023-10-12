@@ -23,11 +23,10 @@ function Portal() {
 <div className="dashboard-container-portal">
   <div className="banner-portal">
         <div className="left-banner">
-          <button
-            className="invert-effect-portal sidebar-toggle-button"
-            onClick={() => setSidebarOpen(!isSidebarOpen)}
-            style={{ backgroundImage: `url(${logo})` }}
-          ></button>
+        <button className={`invert-effect-portal sidebar-toggle-button ${isSidebarOpen ? 'rotated' : ''}`}
+          onClick={() => setSidebarOpen(!isSidebarOpen)}
+          style={{ backgroundImage: `url(${logo})` }}> 
+          </button>
           <h2>ManageMe</h2>
         </div>
         <div className="portal-right-banner">

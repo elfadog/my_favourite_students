@@ -52,6 +52,7 @@ h2 {
 
 .sidebar-portal.open {
   width: 250px;
+  transition: transform 0.3s ease;
 }
 
 .sidebar-portal ul {
@@ -154,6 +155,12 @@ h2 {
 .sidebar-toggle-button {
   background-size: contain;
   background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-toggle-button.rotated {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
 }
 
 .account-icon {
@@ -176,4 +183,10 @@ h2 {
 .main-sidebar-jobs {
   display: flex;
   height: 100vh;
+}
+
+.profile-button,
+.profile-button p {
+  margin: 5px;
+  padding: 2px;
 }
