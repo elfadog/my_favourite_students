@@ -7,6 +7,9 @@ import inventoryIcon from "./Icons/inventoryIcon.png";
 import mailboxIcon from "./Icons/mailboxIcon.png";
 import invoicesIcon from "./Icons/invoicesIcon.png";
 import reportsIcon from "./Icons/reportsIcon.png";
+import activeJobsIcon from "./Icons/activeJobsIcon.png";
+import claimsSectionIcon from "./Icons/claimsSectionIcon.png";
+import invoiceApprovalsIcon from "./Icons/invoiceApprovalsIcon.png";
 import MyCalendar from "./MyCalendar";
 import supervisedUserIcon from "./Icons/supervisedUserIcon.png";
 import arrowDropDown from "./Icons/arrowDropDown.png";
@@ -18,6 +21,12 @@ const menuItems = [
   { text: "Mailbox", icon: mailboxIcon },
   { text: "Invoices", icon: invoicesIcon },
   { text: "Reports", icon: reportsIcon },
+];
+
+const dashboardContent = [
+  { text: "Active Jobs", icon: activeJobsIcon, data: "124" },
+  { text: "Claims", icon: claimsSectionIcon, data: "21" },
+  { text: "Invoice Approvals", icon: invoiceApprovalsIcon, data: "43" },
 ];
 
 const AccountPanelItems = ["Your Account", "Settings", "Log Out", "Support"];
@@ -65,8 +74,10 @@ function AccountPanel({ isAccountPanelOpen, toggleAccountPanel }) {
       {
         <ul>
           {AccountPanelItems.map((item, index) => (
-            <li key={index}>
-              <button className="account-panel-item">{item}</button>
+            <li>
+              <button key={index} className="account-panel-item">
+                {item}
+              </button>
             </li>
           ))}
         </ul>
@@ -120,13 +131,20 @@ const Dashboard = () => {
       <div className="main">
         <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <div className={`content ${isSidebarOpen ? "sidebar-open" : ""}`}>
-          <p>content</p>
-        </div>
-        {/* New Container */}
-        <div className="new-container">
+          {dashboardContent.map((item, index) => (
+            <div key={index} className="section">
+              <img className="section-icon" src={item.icon} alt=""></img>
+              <div className="section-content">
+                <div className="section-title">{item.text}</div>
+                <div className="section-data">{item.data}</div>
+              </div>
+            </div>
+          ))}
+          {/* Calendar stuff
+        <div className="calendar-section">
           <p>MyCalendar</p>
           <MyCalendar />
-          {/* Entering this ^ line causes a problem in displaying the components */}
+        </div> */}
         </div>
       </div>
     </div>
