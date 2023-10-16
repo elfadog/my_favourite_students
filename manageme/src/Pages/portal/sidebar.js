@@ -31,7 +31,7 @@ return (
                         <div
                             className={
                                 selectedIndex === index
-                                    ? "menu-item menu-item-active"
+                                    ? "menu-item-portal menu-item-active"
                                     : "menu-item"
                             }
                             onClick={() => {

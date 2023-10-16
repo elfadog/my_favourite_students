@@ -62,7 +62,7 @@ h2 {
 
 .sidebar-portal ul li {
   text-align: center;
-  padding: 1rem;
+  padding: 0px;
   cursor: pointer;
 }
 
@@ -149,7 +149,18 @@ h2 {
 }
 .menu-item-active {
   background-color: #555;
-  color: white;
+  /* color: white; */
+}
+
+.menu-item-portal {
+  font-weight: bold;
+  font-size: 100%;
+  background-color: #8b44f5;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1px;
+  cursor: pointer;
+  justify-content: flex-start;
 }
 
 .sidebar-toggle-button {
