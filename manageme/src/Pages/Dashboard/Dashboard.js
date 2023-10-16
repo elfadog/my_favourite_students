@@ -84,19 +84,10 @@ const Dashboard = () => {
         <div className={`content ${isSidebarOpen ? "open" : ""}`}>
           <p>content</p>
         </div>
-        <div className="calendar-container">
           <MyCalendar />
-          {/* Entering this ^ line causes a problem in displaying the components */}
-        </div>
       </div>
     </div>
   );
 };
 
 export default Dashboard;
-
-// TODO:
-// 1: add objects to 'content' area
-// 2: add the account icon with a dropdown that contains(account setting and logout options)
-// 3: make the menu items highlight depending on which page is selected (Managing State) - DONE
-// 4: add onClick for opening mailbox (route to the mailbox page)
