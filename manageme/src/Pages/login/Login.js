@@ -45,7 +45,19 @@ const Login = () => {
       const res = await axios.post('http://localhost:3001/login', { username, password });
       if (res.data.success) {
         console.log('Login Successful', res.data);
-        navigate('/Dashboard');
+        console.log(res.data.role);
+        console.log(res.data.username);
+        console.log(res.data.password);
+        
+        // Extract user role from the response data
+        const userRole = res.data.role;
+  
+        if(userRole === 'staff') {
+          navigate('/Dashboard');
+        } 
+        else if(userRole === 'client') {
+          navigate('/Portal');
+        }
       } else {
         throw new Error(res.data.error || 'Login failed');
       }
@@ -57,6 +69,27 @@ const Login = () => {
       playAnimation();
     }
   };
+  // const handleLoginClick = async () => {
+  //   try {
+  //     const res = await axios.post('http://localhost:3001/login', { username, password});
+  //     if (res.data.success) {
+  //       console.log('Login Successful', res.data);
+  //       if( ){
+  //         navigate('/Dashboard');
+  //         } else {  
+  //         navigate('/Portal');
+  //       }
+  //     } else {
+  //       throw new Error(res.data.error || 'Login failed');
+  //     }
+  //   } catch (err) {
+  //     console.error('Login Error', err.message);
+  //     setError(err.message);
+  //     setPassword('');
+  //     setUsername('');
+  //     playAnimation();
+  //   }
+  // };
 
   //Login form
   return (

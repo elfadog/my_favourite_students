@@ -149,7 +149,7 @@ h2 {
 }
 .menu-item-active {
   background-color: #555;
-  /* color: white; */
+  color: white;
 }
 
 .menu-item-portal {
