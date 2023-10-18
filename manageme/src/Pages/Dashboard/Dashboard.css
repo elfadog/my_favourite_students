@@ -68,6 +68,16 @@ body {
   flex-direction: row;
 }
 
+.home-button {
+  background-color: transparent;
+  border: none;
+}
+
+.home-button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
 .right-banner {
   display: flex;
   flex-direction: row;
@@ -107,9 +117,11 @@ body {
 
 .account-panel-item {
   display: flex;
-  width: 130px;
+  width: 113px;
+  color: black;
   background-color: #ffffff;
   border: 0.5px solid rgb(134, 133, 133);
+  text-decoration: none;
   margin: 0px;
   padding: 10px 0px 10px 15px;
   cursor: pointer;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "./Dashboard.css";
 import logo from "./logo.png";
 import Sidebar from "./Sidebar";
@@ -27,13 +28,26 @@ function AccountPanel({ isAccountPanelOpen, toggleAccountPanel }) {
     >
       {
         <ul>
-          {AccountPanelItems.map((item, index) => (
-            <li>
-              <button key={index} className="account-panel-item">
-                {item}
-              </button>
-            </li>
-          ))}
+          <li>
+            <Link to="/Dashboard" className="account-panel-item">
+              Your Profile
+            </Link>
+          </li>
+          <li>
+            <Link to="/Dashboard" className="account-panel-item">
+              Settings
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="account-panel-item">
+              Log Out
+            </Link>
+          </li>
+          <li>
+            <Link to="/Support" className="account-panel-item">
+              Support
+            </Link>
+          </li>
         </ul>
       }
     </div>
@@ -45,6 +59,12 @@ const Dashboard = () => {
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
+  };
+
+  const navigate = useNavigate();
+
+  const handleMenuClick = async () => {
+    navigate("/Dashboard");
   };
 
   const [isAccountPanelOpen, setAccountPanelOpen] = useState(false);
@@ -64,7 +84,16 @@ const Dashboard = () => {
             onClick={toggleSidebar}
             style={{ backgroundImage: `url(${logo})` }}
           ></button>
-          <h2>ManageMe</h2>
+
+          <button
+            className="home-button"
+            type="button"
+            onClick={async () => {
+              navigate("/Dashboard");
+            }}
+          >
+            <h2>ManageMe</h2>
+          </button>
         </div>
         <div className="right-banner">
           <img
