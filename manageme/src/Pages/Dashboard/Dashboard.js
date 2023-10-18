@@ -15,13 +15,7 @@ const dashboardContent = [
   { text: "Invoice Approvals", icon: invoiceApprovalsIcon, data: "43" },
 ];
 
-const AccountPanelItems = [
-  "User's Name",
-  "Your Account",
-  "Settings",
-  "Log Out",
-  "Support",
-];
+const AccountPanelItems = ["Your Account", "Settings", "Log Out", "Support"];
 
 // Account panel component
 function AccountPanel({ isAccountPanelOpen, toggleAccountPanel }) {
