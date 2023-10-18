@@ -1,48 +1,71 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const mongoose = require('mongoose');
+require("dotenv").config();
+
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mongoose = require("mongoose");
+// const loginRoutes = require('./Routes/loginRoute');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/mydb')
-.then(
-    () => { 
-      console.log("Connected");
-    },
-    err => {
-      console.log(err); 
-    }
-);
+const MONGO_URI = process.env.MONGO_URI || "fallbackURI";
+
+mongoose
+  .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err);
+  });
 
 const UserSchema = new mongoose.Schema({
-    username: String,
-    password: String,
+  username: String,
+  password: String,
 });
 
-const User = mongoose.model('User', UserSchema, 'mydb');
+//Schema for retrieving Jobs from the database
+const jobSchema = new mongoose.Schema({
+  invoiceNo: String,
+  // Add other fields as necessary
+});
+const Job = mongoose.model("Job", jobSchema, "jobs");
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+const User = mongoose.model("User", UserSchema, "Users");
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: "http://localhost:3000" }));
 app.use(bodyParser.json());
 
-app.post('/login', async (req, res) => {
-    const { username, password } = req.body;
-    
-    try {
-      const user = await User.findOne({ username });
-      
-      if (!user || user.password !== password) {
-        return res.status(401).json({ success: false, error: 'Invalid username or password' });
-      }
-      
-      res.status(200).json({ success: true, message: 'Login successful' });
-    } catch (err) {
-      console.error('Server error:', err);
-      res.status(500).json({ success: false, error: 'Server error' });
+// app.use('/api', loginRoutes);
+
+app.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const user = await User.findOne({ username });
+
+    if (!user || user.password !== password) {
+      return res
+        .status(401)
+        .json({ success: false, error: "Invalid username or password" });
     }
+    res.status(200).json({ success: true, message: "Login successful" });
+  } catch (err) {
+    console.error("Server error:", err);
+    res.status(500).json({ success: false, error: "Server error" });
+  }
 });
 
-app.listen(3001, () => console.log('Server is running on port 3001'));
+app.get("/api/jobs", async (req, res) => {
+  try {
+    const jobs = await Job.find({});
+    res.json(jobs);
+  } catch (error) {
+    console.error("Error fetching jobs:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+app.listen(3001, "0.0.0.0", () =>
+  console.log("Server is running on port 3001")
+);
