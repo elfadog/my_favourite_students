@@ -53,8 +53,12 @@ const Support = () => {
             <div className="purple-strip"></div>
             <div className="messages">
               {/* Add your chat messages here */}
-              <p>Hi how can I help?</p>
-              <p>I need help with this!</p>
+              <div className="chat-container bot-message">
+                <p>Hi, how can I help?</p>
+              </div>
+              <div className="chat-container user-message">
+                <p>I need help with this!</p>
+              </div>
               {/* Add more messages as needed */}
             </div>
             {/* Content of the white tile */}
