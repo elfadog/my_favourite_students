@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 import React, { useState } from 'react';
 import JobStatus from './jobStatus';
 import './portal.css';
@@ -10,7 +10,6 @@ export const Portal = () => {
   )
 };
 
-=======
 // import React, { useState } from 'react';
 // import JobStatus from './jobStatus';
 // import './portal.css';
@@ -87,6 +86,6 @@ export const Portal = () => {
 //     </div>
 //   );
 // }
->>>>>>> Stashed changes
 
-// export default Portal;
+
+export default Portal;
