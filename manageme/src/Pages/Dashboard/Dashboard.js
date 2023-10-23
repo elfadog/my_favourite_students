@@ -10,6 +10,7 @@ import reportsIcon from "./Icons/reportsIcon.png";
 import MyCalendar from "./MyCalendar";
 import supervisedUserIcon from "./Icons/supervisedUserIcon.png";
 import arrowDropDown from "./Icons/arrowDropDown.png";
+import EmployeeList from "./WorkHours";
 
 const menuItems = [
   { text: "Dashboard", icon: dashboardIcon },
@@ -82,9 +83,9 @@ const Dashboard = () => {
       <div className="main">
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <div className={`content ${isSidebarOpen ? "open" : ""}`}>
-          <p>content</p>
         </div>
           <MyCalendar />
+          <EmployeeList />
       </div>
     </div>
   );

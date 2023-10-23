@@ -10,13 +10,13 @@ function MyCalendar() {
 
   return (
       <div className='calendar-container'>
-        <div className="selected-date">
-          <p>{formattedDate}</p>
-        </div>
         <Calendar
           onChange={setDate}
           value={date}
         />
+        <div className="selected-date">
+          {formattedDate}
+        </div>
       </div>
   );
 }

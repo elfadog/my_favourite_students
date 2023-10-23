@@ -52,6 +52,18 @@
   line-height: 1.125em;
 }
 
+/* This is the placement of the calendar container */
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  height: 37vh; /* Set the desired height */
+  width: 40%; /* Set the desired width */
+}
+
 .react-calendar--doubleView {
   width: 700px;
 }
@@ -225,13 +237,4 @@
   width: 70%;
   max-width: 70vh;
   margin: 0 auto;
-}
-
-.selected-date {
-  font-family: "Koulen-Regular", sans-serif;
-  font-size: 1.2rem;
-  color: #8b44f5; /* Set your preferred text color */
-  margin-top: 20px;
-  text-align: center;
-  justify-content: center;
 }
