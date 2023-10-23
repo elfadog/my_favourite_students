@@ -29,7 +29,7 @@
 
 .element-container:hover .circle {
   background-color: #8a51d5; /* Color when hovered */
-  opacity: 0.75;
+  opacity:0.75;
 }
 
 .element {
@@ -92,34 +92,4 @@
 
 .messages {
   padding: 20px;
-}
-
-/* Chat container styles */
-.chat-container {
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  padding: 10px;
-  margin-top: 10px;
-  width: 70%;
-  align-self: flex-end;
-  max-width: 80%;
-}
-
-.chat-container p {
-  margin: 0;
-}
-
-.user-message {
-  background-color: #007bff;
-  color: #fff;
-  align-self: flex-end;
-  margin-left: 30px;
-}
-
-.bot-message {
-  background-color: #f1f1f1;
-  color: #000;
-  align-self: flex-start;
-  margin-left: -10px;
 }
