@@ -83,5 +83,3 @@ We hope you find ManageMe helpful for your finance and invoice management needs!
 
 Happy managing!
 ```
-
-This updated README file includes information about using the MERN stack and MongoDB in your application.
