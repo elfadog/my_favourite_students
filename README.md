@@ -1,5 +1,3 @@
-Certainly, here's the README file with the added information about using the MERN stack and MongoDB:
-
 ```markdown
 # ManageMe - Finance and Invoice Management App
 
