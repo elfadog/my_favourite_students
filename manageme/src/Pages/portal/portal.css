@@ -13,14 +13,12 @@
   font-style: normal;
 }
 
-/* Type Selectors (like h2) and their corresponding styling remain unchanged */
 h2 {
   font-family: "MuseoModerno-Regular", sans-serif;
   font-size: 2rem;
   color: white;
 }
 
-/* Adjusting Class Selectors */
 .dashboard-container-portal {
   height: 100vh;
   display: flex;
@@ -29,22 +27,32 @@ h2 {
 }
 
 .banner-portal {
-  background-color: #783cc8;
-  padding: 1rem;
-  color: white;
+  grid-area: banner;
+  color: #ffffff;
+  background: #783cc8;
+  height: 3.75rem;
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  width: 100vw;
+}
+.portal-right-banner {
+  display: flex;
+  align-items: center;
+  padding: 0px 0px;
 }
 
 .sidebar-portal {
-  width: 250px;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  left: -250px;
-  height: 100%;
-  padding-top: 60px;
+  background-color: #783cc8;
+  width: 0;
+  overflow: hidden;
   transition: left 0.3s ease;
+}
+
+.sidebar-portal.open {
+  width: 250px;
+  transition: transform 0.3s ease;
 }
 
 .sidebar-portal ul {
@@ -54,7 +62,7 @@ h2 {
 
 .sidebar-portal ul li {
   text-align: center;
-  padding: 1rem;
+  padding: 0px;
   cursor: pointer;
 }
 
@@ -138,4 +146,58 @@ h2 {
 
 .send-btn-portal:hover {
   background-color: #682cb7;
+}
+.menu-item-active {
+  background-color: #555;
+  color: white;
+}
+
+.menu-item-portal {
+  font-weight: bold;
+  font-size: 100%;
+  background-color: #8b44f5;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1px;
+  cursor: pointer;
+  justify-content: flex-start;
+}
+
+.sidebar-toggle-button {
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-toggle-button.rotated {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+.account-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.profile-button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 5px 5px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 60px;
+  align-content: center;
+}
+
+.main-sidebar-jobs {
+  display: flex;
+  height: 100vh;
+}
+
+.profile-button,
+.profile-button p {
+  margin: 5px;
+  padding: 2px;
 }

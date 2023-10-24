@@ -11,6 +11,7 @@ const Login = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  //Animation effect for login box
   const playAnimation = () => {
     const loginBox = document.querySelector('.login-box');
     const svg = document.querySelector('.background-svg');
@@ -31,18 +32,32 @@ const Login = () => {
     playAnimation();
   }, []);
 
+  //Using a key listner to allow the user to press enter to login
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       handleLoginClick();
     }
   };
 
+  //Login function to talk with the backend
   const handleLoginClick = async () => {
     try {
       const res = await axios.post('http://localhost:3001/login', { username, password });
       if (res.data.success) {
         console.log('Login Successful', res.data);
-        navigate('/Dashboard');
+        console.log(res.data.role);
+        console.log(res.data.username);
+        console.log(res.data.password);
+        
+        // Extract user role from the response data
+        const userRole = res.data.role;
+  
+        if(userRole === 'staff') {
+          navigate('/Dashboard');
+        } 
+        else if(userRole === 'client') {
+          navigate('/Portal');
+        }
       } else {
         throw new Error(res.data.error || 'Login failed');
       }
@@ -54,7 +69,29 @@ const Login = () => {
       playAnimation();
     }
   };
+  // const handleLoginClick = async () => {
+  //   try {
+  //     const res = await axios.post('http://localhost:3001/login', { username, password});
+  //     if (res.data.success) {
+  //       console.log('Login Successful', res.data);
+  //       if( ){
+  //         navigate('/Dashboard');
+  //         } else {  
+  //         navigate('/Portal');
+  //       }
+  //     } else {
+  //       throw new Error(res.data.error || 'Login failed');
+  //     }
+  //   } catch (err) {
+  //     console.error('Login Error', err.message);
+  //     setError(err.message);
+  //     setPassword('');
+  //     setUsername('');
+  //     playAnimation();
+  //   }
+  // };
 
+  //Login form
   return (
     <div className="login-container">
       <div className="login-box">
@@ -69,7 +106,7 @@ const Login = () => {
               name="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              onKeyPress={handleKeyPress} // Added this line
+              onKeyPress={handleKeyPress}
             />
           </div>
           <div className="form-group">
@@ -80,7 +117,7 @@ const Login = () => {
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              onKeyPress={handleKeyPress} // Added this line
+              onKeyPress={handleKeyPress}
             />
           </div>
           {error && <div className="error-message">{error}</div>}

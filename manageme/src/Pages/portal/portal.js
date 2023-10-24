@@ -1,79 +1,57 @@
-// import React, { useState } from 'react';
-// import JobStatus from './jobStatus';
-// import './portal.css';
-// // import menuItems from '..Dashboardls/Dashboard';
+import React, { useState } from 'react';
+import JobStatus from './jobStatus';
+import Sidebar from './sidebar';
+import './portal.css';
+import accountIcon from './Icons/supervisedUserIcon.png';
+import logo from './Icons/logo.png';
 
-// function Portal() {
-//   const [jobs, setJobs] = useState([
-//     { id: 1, status: 'In Progress', messages: [] },
-//     { id: 2, status: 'Completed', messages: [] },
-//   ]);
+function Portal() {
+  const [jobs, setJobs] = useState([
+    { id: 1, status: 'In Progress', messages: [] },
+    { id: 2, status: 'Completed', messages: [] },
+  ]);
   
-//   const sendMessage = (jobId, message) => {
-//     setJobs(jobs.map(job => 
-//       job.id === jobId ? { ...job, messages: [...job.messages, message] } : job
-//     ));
-//   };
+  const sendMessage = (jobId, message) => {
+    setJobs(jobs.map(job => 
+      job.id === jobId ? { ...job, messages: [...job.messages, message] } : job
+    ));
+  };
 
-//   // Sidebar component
-// function Sidebar({ isOpen, toggleSidebar }) {
-//     const [selectedIndex, setSelectedIndex] = useState(0);
-  
-//     return (
-//       <div className={`sidebar ${isOpen ? "open" : ""}`}>
-//         <ul>
-//           {menuItems.map((item, index) => (
-//             <li key={index}>
-//               <div
-//                 className={
-//                   selectedIndex === index
-//                     ? "menu-item menu-item-active"
-//                     : "menu-item"
-//                 }
-//                 onClick={() => {
-//                   setSelectedIndex(index);
-//                 }}
-//               >
-//                 <div
-//                   className="menu-icon"
-//                   style={{ backgroundImage: `url(${item.icon})` }}
-//                 ></div>
-//                 <span>{item.text}</span>
-//               </div>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//     );
-//   }
-  
-//   return (
-//     <div>
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-// <div className="banner">
-//         <div className="left-banner">
-//           <button
-//             className="invert-effect sidebar-toggle-button"
-//             onClick={toggleSidebar}
-//             style={{ backgroundImage: `url(${logo})` }}
-//           ></button>
-//           <h2>ManageMe</h2>
-//         </div>
-//         <div className="right-banner">
-//           <img
-//             className="account-icon"
-//             src={supervisedUserIcon} alt="acccountIcon"
-//           ></img>
-//           <p>account area</p>
-//         </div>
-//       </div>
-//       <ul>
-//         {jobs.map(job => (
-//           <JobStatus key={job.id} job={job} onSendMessage={sendMessage} />
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
+  return (
+<div className="dashboard-container-portal">
+  <div className="banner-portal">
+        <div className="left-banner">
+        <button className={`invert-effect-portal sidebar-toggle-button ${isSidebarOpen ? 'rotated' : ''}`}
+          onClick={() => setSidebarOpen(!isSidebarOpen)}
+          style={{ backgroundImage: `url(${logo})` }}> 
+          </button>
+          <h2>ManageMe</h2>
+        </div>
+        <div className="portal-right-banner">
+          <button className="profile-button">
+            <p>Profile</p>
+          </button>
 
-// export default Portal;
+          {/* <img
+            className="account-icon"
+            src={accountIcon} alt="accountIcon" 
+          ></img>
+          <p>Profile</p> */}
+        </div>
+    </div>
+    <div className='main-sidebar-jobs'>
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={() => setSidebarOpen(!isSidebarOpen)} />
+      <div className="job-list-container">
+      {jobs.map(job => (
+        <JobStatus key={job.id} job={job} onSendMessage={sendMessage} />
+      ))}
+    </div>
+  </div>
+</div>
+
+  );
+}
+
+export default Portal;
