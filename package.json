@@ -63,6 +63,12 @@
     "server": "cd server && node server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -76,7 +82,8 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
+    ],
+    "proxy": "http://localhost:3002"
   },
   "proxy": "http://localhost:3001",
   "devDependencies": {
