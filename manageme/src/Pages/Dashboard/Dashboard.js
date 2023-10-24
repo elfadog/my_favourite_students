@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar";
 import activeJobsIcon from "./Icons/activeJobsIcon.png";
 import claimsSectionIcon from "./Icons/claimsSectionIcon.png";
 import invoiceApprovalsIcon from "./Icons/invoiceApprovalsIcon.png";
+import calendarIcon from "./Icons/calendarIcon.png";
 import MyCalendar from "./MyCalendar";
 import supervisedUserIcon from "./Icons/supervisedUserIcon.png";
 import arrowDropDown from "./Icons/arrowDropDown.png";

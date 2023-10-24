@@ -179,7 +179,7 @@ ul {
   color: white;
   position: fixed;
   left: -20%;
-  transition: left 0.3s ease-in-out;
+  transition: left 0.1s ease-in-out;
 }
 
 .sidebar.sidebar-open {
@@ -196,7 +196,7 @@ ul {
   justify-content: space-between;
   padding: 10%;
   flex-grow: 1; /* Allow content to take available space */
-  transition: margin-left 0.3s ease-in-out; /* Smooth transition */
+  transition: margin-left 0.1s ease-in-out; /* Smooth transition */
 }
 
 .section {
@@ -244,7 +244,7 @@ ul {
 }
 
 .sidebar-toggle-button.sidebar-open {
-  transform: rotate(-270deg);
+  transform: rotate(90deg);
 }
 
 .sidebar-toggle-button:hover {

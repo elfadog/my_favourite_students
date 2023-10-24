@@ -6,6 +6,7 @@ import inventoryIcon from "./Icons/inventoryIcon.png";
 import mailboxIcon from "./Icons/mailboxIcon.png";
 import invoicesIcon from "./Icons/invoicesIcon.png";
 import reportsIcon from "./Icons/reportsIcon.png";
+import calendarIcon from "./Icons/calendarIcon.png";
 
 const menuItems = [
   { text: "Dashboard", icon: dashboardIcon },
@@ -14,7 +15,7 @@ const menuItems = [
   { text: "Mailbox", icon: mailboxIcon },
   { text: "Invoices", icon: invoicesIcon },
   { text: "Reports", icon: reportsIcon },
-  { text: "Calendar", icon: reportsIcon },
+  { text: "Calendar", icon: calendarIcon },
 ];
 
 // Sidebar component
