@@ -55,10 +55,6 @@ app.post('/login', async (req, res) => {
         res.status(500).json({ success: false, error: 'Server error' });
     }
     res.status(200).json({ success: true, message: "Login successful" });
-  } catch (err) {
-    console.error("Server error:", err);
-    res.status(500).json({ success: false, error: "Server error" });
-  }
 });
 
 // app.post('/login', async (req, res) => {
