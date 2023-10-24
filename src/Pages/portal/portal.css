@@ -1,0 +1,203 @@
+/* Font Face Declarations remain unchanged */
+@font-face {
+  font-family: "MuseoModerno-Regular";
+  src: url("./MuseoModerno-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Koulen-Regular";
+  src: url("./Koulen-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "MuseoModerno-Regular", sans-serif;
+  font-size: 2rem;
+  color: white;
+}
+
+.dashboard-container-portal {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+}
+
+.banner-portal {
+  grid-area: banner;
+  color: #ffffff;
+  background: #783cc8;
+  height: 3.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+}
+.portal-right-banner {
+  display: flex;
+  align-items: center;
+  padding: 0px 0px;
+}
+
+.sidebar-portal {
+  background-color: #783cc8;
+  width: 0;
+  overflow: hidden;
+  transition: left 0.3s ease;
+}
+
+.sidebar-portal.open {
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-portal ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-portal ul li {
+  text-align: center;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.sidebar-portal ul li:hover {
+  background-color: #555;
+}
+
+.main-content-portal {
+  margin-left: 260px;
+  padding: 1rem;
+}
+
+.toggle-btn-portal {
+  position: absolute;
+  left: 230px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.invert-effect-portal {
+  filter: invert(100%);
+}
+
+.login-container-portal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-form-portal {
+  background-color: #eeeeee;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form-portal button {
+  background-color: #783cc8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.login-form-portal button:hover {
+  background-color: #682cb7;
+}
+
+.job-status-portal {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.messages-portal {
+  margin-top: 1rem;
+  border-top: 1px solid #e1e1e1;
+  padding-top: 1rem;
+}
+
+.message-input-portal {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e1e1e1;
+}
+
+.send-btn-portal {
+  background-color: #783cc8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.send-btn-portal:hover {
+  background-color: #682cb7;
+}
+.menu-item-active {
+  background-color: #555;
+  color: white;
+}
+
+.menu-item-portal {
+  font-weight: bold;
+  font-size: 100%;
+  background-color: #8b44f5;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1px;
+  cursor: pointer;
+  justify-content: flex-start;
+}
+
+.sidebar-toggle-button {
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-toggle-button.rotated {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+.account-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.profile-button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 5px 5px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 60px;
+  align-content: center;
+}
+
+.main-sidebar-jobs {
+  display: flex;
+  height: 100vh;
+}
+
+.profile-button,
+.profile-button p {
+  margin: 5px;
+  padding: 2px;
+}

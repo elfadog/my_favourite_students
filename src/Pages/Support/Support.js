@@ -1,19 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
 import Icon from "./Icon";
 import logo from "./logo.png";
 
 const Support = () => {
   const [isTileVisible, setTileVisibility] = useState(false);
 
-  const navigate = useNavigate();
-
   const toggleTile = () => {
     setTileVisibility(!isTileVisible);
-  };
-
-  const goToLoginPage = () => {
-    navigate("/Dashboard");
   };
 
   return (
@@ -24,7 +17,6 @@ const Support = () => {
           <button
             className="invert-effect sidebar-toggle-button"
             style={{ backgroundImage: `url(${logo})`}}
-            onClick={goToLoginPage} 
           ></button>
           <h2>ManageMe</h2>
         </div>
