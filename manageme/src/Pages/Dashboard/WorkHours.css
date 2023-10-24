@@ -1,0 +1,59 @@
+/* Apply these styles to your employee work hours list component */
+
+/* Styling for the scrollable list container */
+.employee-list {
+    width: 100%;
+    max-height: 400px;
+    overflow-y: scroll;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+  }
+  
+  /* Styling for individual employee list items */
+  .employee-item {
+    padding: 16px;
+    border-bottom: 1px solid #d1d1d1;
+  }
+  
+  /* Styling for employee name */
+  .employee-name {
+    font-weight: bold;
+  }
+  
+  /* Styling for employee ID */
+  .employee-id {
+    font-style: italic;
+    color: #555;
+  }
+  
+  /* Styling for employee role */
+  .employee-role {
+    font-weight: bold;
+    color: #783cc8;
+  }
+  
+  /* Styling for accumulated work hours */
+  .employee-hours {
+    color: #61dafb;
+  }
+  
+  /* Styling for current status */
+  .employee-status {
+    color: #5392E4;
+  }
+  
+  /* Add these styles for the selected date display */
+  .selected-date {
+    font-family: "Koulen-Regular", sans-serif;
+    font-size: 1.2rem;
+    color: #783cc8; /* Set your preferred text color */
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .attribute-row{
+    flex-direction: row;
+    
+  }
+   

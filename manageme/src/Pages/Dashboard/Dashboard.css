@@ -163,8 +163,8 @@ p {
 
 /* Calendar container */
 .calendar {
-  width: 60%; /* Set the desired width */
-  height: 60vh; /* Set the desired height */
+  width: 32%; /* Set the desired width */
+  height: 32%; /* Set the desired height */
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
@@ -198,10 +198,23 @@ p {
   border-radius: 4px;
 }
 
-.new-container {
+/* This is the placement of the calendar container */
+.calendar-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10px;
+  height: 37vh; /* Set the desired height */
+  width: 100%; /* Set the desired width */
+}
+
+/* Selected date styles */
+.selected-date {
+  font-family: "Koulen-Regular", sans-serif;
+  font-size: 1.2rem;
+  color: #8b44f5; /* Set your preferred text color */
+  margin-top: 20px;
+  text-align: center;
   justify-content: center;
-  height: 70vh; /* Set the desired height */
-  width: 70%; /* Set the desired width */
 }

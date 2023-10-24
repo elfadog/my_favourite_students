@@ -10,6 +10,7 @@ import reportsIcon from "./Icons/reportsIcon.png";
 import MyCalendar from "./MyCalendar";
 import supervisedUserIcon from "./Icons/supervisedUserIcon.png";
 import arrowDropDown from "./Icons/arrowDropDown.png";
+import EmployeeList from "./WorkHours";
 
 const menuItems = [
   { text: "Dashboard", icon: dashboardIcon },
@@ -82,23 +83,12 @@ const Dashboard = () => {
       <div className="main">
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <div className={`content ${isSidebarOpen ? "open" : ""}`}>
-          <p>content</p>
         </div>
-        {/* New Container */}
-        <div className="new-container">
-          <p>MyCalendar</p>
           <MyCalendar />
-          {/* Entering this ^ line causes a problem in displaying the components */}
-        </div>
+          <EmployeeList />
       </div>
     </div>
   );
 };
 
 export default Dashboard;
-
-// TODO:
-// 1: add objects to 'content' area
-// 2: add the account icon with a dropdown that contains(account setting and logout options)
-// 3: make the menu items highlight depending on which page is selected (Managing State) - DONE
-// 4: add onClick for opening mailbox (route to the mailbox page)
