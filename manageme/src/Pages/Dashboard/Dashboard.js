@@ -1,54 +1,54 @@
 import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "./Dashboard.css";
 import logo from "./logo.png";
-import dashboardIcon from "./Icons/dashboardIcon.png";
-import claimsIcon from "./Icons/claimsIcon.png";
-import inventoryIcon from "./Icons/inventoryIcon.png";
-import mailboxIcon from "./Icons/mailboxIcon.png";
-import invoicesIcon from "./Icons/invoicesIcon.png";
-import reportsIcon from "./Icons/reportsIcon.png";
+import Sidebar from "./Sidebar";
+import activeJobsIcon from "./Icons/activeJobsIcon.png";
+import claimsSectionIcon from "./Icons/claimsSectionIcon.png";
+import invoiceApprovalsIcon from "./Icons/invoiceApprovalsIcon.png";
+import calendarIcon from "./Icons/calendarIcon.png";
 import MyCalendar from "./MyCalendar";
 import supervisedUserIcon from "./Icons/supervisedUserIcon.png";
 import arrowDropDown from "./Icons/arrowDropDown.png";
-import EmployeeList from "./WorkHours";
 
-const menuItems = [
-  { text: "Dashboard", icon: dashboardIcon },
-  { text: "Claims", icon: claimsIcon },
-  { text: "Inventory", icon: inventoryIcon },
-  { text: "Mailbox", icon: mailboxIcon },
-  { text: "Invoices", icon: invoicesIcon },
-  { text: "Reports", icon: reportsIcon },
+const dashboardContent = [
+  { text: "Active Jobs", icon: activeJobsIcon, data: "124" },
+  { text: "Claims", icon: claimsSectionIcon, data: "21" },
+  { text: "Invoice Approvals", icon: invoiceApprovalsIcon, data: "43" },
 ];
 
-// Sidebar component
-function Sidebar({ isOpen, toggleSidebar }) {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
+// Account panel component
+function AccountPanel({ isAccountPanelOpen, toggleAccountPanel }) {
   return (
-    <div className={`sidebar ${isOpen ? "open" : ""}`}>
-      <ul>
-        {menuItems.map((item, index) => (
-          <li key={index}>
-            <div
-              className={
-                selectedIndex === index
-                  ? "menu-item menu-item-active"
-                  : "menu-item"
-              }
-              onClick={() => {
-                setSelectedIndex(index);
-              }}
-            >
-              <div
-                className="menu-icon"
-                style={{ backgroundImage: `url(${item.icon})` }}
-              ></div>
-              <span>{item.text}</span>
-            </div>
+    <div
+      className={`account-panel ${
+        isAccountPanelOpen ? "account-panel-open" : ""
+      }`}
+    >
+      {
+        <ul>
+          <li>
+            <Link to="/Dashboard" className="account-panel-item">
+              Your Profile
+            </Link>
           </li>
-        ))}
-      </ul>
+          <li>
+            <Link to="/Dashboard" className="account-panel-item">
+              Settings
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="account-panel-item">
+              Log Out
+            </Link>
+          </li>
+          <li>
+            <Link to="/Support" className="account-panel-item">
+              Support
+            </Link>
+          </li>
+        </ul>
+      }
     </div>
   );
 }
@@ -60,32 +60,76 @@ const Dashboard = () => {
     setSidebarOpen(!isSidebarOpen);
   };
 
+  const navigate = useNavigate();
+
+  const handleMenuClick = async () => {
+    navigate("/Dashboard");
+  };
+
+  const [isAccountPanelOpen, setAccountPanelOpen] = useState(false);
+
+  const toggleAccountPanel = () => {
+    setAccountPanelOpen(!isAccountPanelOpen);
+  };
+
   return (
     <div className="dashboard-container">
-      {/* Sidebar */}
       <div className="banner">
         <div className="left-banner">
           <button
-            className="invert-effect sidebar-toggle-button"
+            className={`invert-effect sidebar-toggle-button ${
+              isSidebarOpen ? "sidebar-open" : ""
+            }`}
             onClick={toggleSidebar}
             style={{ backgroundImage: `url(${logo})` }}
           ></button>
-          <h2>ManageMe</h2>
+
+          <button
+            className="home-button"
+            type="button"
+            onClick={async () => {
+              navigate("/Dashboard");
+            }}
+          >
+            <h2>ManageMe</h2>
+          </button>
         </div>
         <div className="right-banner">
           <img
             className="account-icon"
-            src={supervisedUserIcon} alt="acccountIcon"
+            src={supervisedUserIcon}
+            alt="acccountIcon"
           ></img>
-          <p>account area</p>
+          <img
+            className="arrow-drop-down-button"
+            src={arrowDropDown}
+            alt="arrow Drop Down Button"
+            onClick={toggleAccountPanel}
+          ></img>
+          <AccountPanel
+            isAccountPanelOpen={isAccountPanelOpen}
+            toggleAccountPanel={toggleAccountPanel}
+          />
         </div>
       </div>
       <div className="main">
-        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <div className={`content ${isSidebarOpen ? "open" : ""}`}>
-        </div>
+        <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <div className={`content ${isSidebarOpen ? "sidebar-open" : ""}`}>
+          {dashboardContent.map((item, index) => (
+            <div key={index} className="section">
+              <img className="section-icon" src={item.icon} alt=""></img>
+              <div className="section-content">
+                <div className="section-title">{item.text}</div>
+                <div className="section-data">{item.data}</div>
+              </div>
+            </div>
+          ))}
+          {/* Calendar stuff
+        <div className="calendar-section">
+          <p>MyCalendar</p>
           <MyCalendar />
-          <EmployeeList />
+        </div> */}
+        </div>
       </div>
     </div>
   );

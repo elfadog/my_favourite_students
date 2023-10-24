@@ -33,7 +33,7 @@ const Job = mongoose.model('Job', jobSchema, 'jobs');
 
 const User = mongoose.model('User', UserSchema, 'Users');
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: "http://localhost:3000" }));
 app.use(bodyParser.json());
 
 // app.use('/api', loginRoutes);
@@ -54,6 +54,11 @@ app.post('/login', async (req, res) => {
         console.error('Server error:', err);
         res.status(500).json({ success: false, error: 'Server error' });
     }
+    res.status(200).json({ success: true, message: "Login successful" });
+  } catch (err) {
+    console.error("Server error:", err);
+    res.status(500).json({ success: false, error: "Server error" });
+  }
 });
 
 // app.post('/login', async (req, res) => {
