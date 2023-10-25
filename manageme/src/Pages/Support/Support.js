@@ -51,12 +51,6 @@ const Support = () => {
     setTileVisibility(!isTileVisible);
   };
 
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
-
   const [isAccountPanelOpen, setAccountPanelOpen] = useState(false);
 
   const toggleAccountPanel = () => {
@@ -68,10 +62,10 @@ const Support = () => {
       <div className="banner">
         <div className="left-banner">
           <button
-            className={`invert-effect sidebar-toggle-button ${
-              isSidebarOpen ? "sidebar-open" : ""
-            }`}
-            onClick={toggleSidebar}
+            className={`invert-effect sidebar-toggle-button`}
+            onClick={async () => {
+              navigate("/Dashboard");
+            }}
             style={{ backgroundImage: `url(${logo})` }}
           ></button>
 
@@ -104,10 +98,7 @@ const Support = () => {
         </div>
       </div>
       <div className="main-support-area-container">
-        <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <div
-          className={`content-container ${isSidebarOpen ? "sidebar-open" : ""}`}
-        >
+        <div className="content-container">
           <strong className="title-container">
             Frequently Asked Questions
           </strong>
