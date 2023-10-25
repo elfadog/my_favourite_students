@@ -31,7 +31,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
               <div
                 className={
                   selectedIndex === index
-                    ? "menu-item-portal menu-item-active"
+                    ? "menu-item menu-item-active"
                     : "menu-item"
                 }
                 onClick={() => {

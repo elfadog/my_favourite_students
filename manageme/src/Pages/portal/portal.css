@@ -45,14 +45,26 @@ h2 {
 
 .sidebar-portal {
   background-color: #783cc8;
-  width: 0;
+  width: 250px;
+  height: 100%;
+  left: -300px;
+  color: white;
+  font-size: 100%;
   overflow: hidden;
+  position: fixed;
   transition: left 0.3s ease;
 }
 
 .sidebar-portal.open {
-  width: 250px;
-  transition: transform 0.3s ease;
+  left: 0px;
+}
+
+.sidebar-portal.open + .job-list-container {
+  margin-left: 255px; /* Push content to the right when sidebar is open */
+}
+
+.job-list-container {
+  transition: margin-left 0.3s ease;
 }
 
 .sidebar-portal ul {
@@ -148,8 +160,7 @@ h2 {
   background-color: #682cb7;
 }
 .menu-item-active {
-  background-color: #555;
-  color: white;
+  background-color: #572c8f;
 }
 
 .menu-item-portal {

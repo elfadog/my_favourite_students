@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Dashboard.css";
 import logo from "./logo.png";
-import Sidebar from "./Sidebar";
+import Sidebar from "./Sidebar.js";
 import activeJobsIcon from "./Icons/activeJobsIcon.png";
 import claimsSectionIcon from "./Icons/claimsSectionIcon.png";
 import invoiceApprovalsIcon from "./Icons/invoiceApprovalsIcon.png";
 import calendarIcon from "./Icons/calendarIcon.png";
 import MyCalendar from "./MyCalendar";
-import supervisedUserIcon from "./Icons/supervisedUserIcon.png";
+import accountIcon from "./Icons/supervisedUserIcon.png";
 import arrowDropDown from "./Icons/arrowDropDown.png";
 
 const dashboardContent = [
@@ -93,7 +93,7 @@ const Dashboard = () => {
         <div className="right-banner">
           <img
             className="account-icon"
-            src={supervisedUserIcon}
+            src={accountIcon}
             alt="acccountIcon"
           ></img>
           <img
