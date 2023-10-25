@@ -120,9 +120,9 @@ const Dashboard = () => {
               </div>
             </div>
           ))}
-          {/* <div className="calendar-section">
-            <MyCalendar />
-          </div> */}
+        </div>
+        <div className="calendar-section">
+          <MyCalendar />
         </div>
       </div>
     </div>
