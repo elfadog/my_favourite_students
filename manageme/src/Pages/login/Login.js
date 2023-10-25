@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import gsap from 'gsap';
-import './Login.css';
-import logo from './logo.png';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
+import "./Login.css";
+import logo from "./logo.png";
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   //Animation effect for login box
   const playAnimation = () => {
-    const loginBox = document.querySelector('.login-box');
-    const svg = document.querySelector('.background-svg');
+    const loginBox = document.querySelector(".login-box");
+    const svg = document.querySelector(".background-svg");
 
     gsap.set(loginBox, { opacity: 0 });
 
@@ -26,7 +26,7 @@ const Login = () => {
       ease: "power1.in",
     }).to(loginBox, { duration: 1, opacity: 1, ease: "power1.out" });
     tl.play();
-  }
+  };
 
   useEffect(() => {
     playAnimation();
@@ -34,7 +34,7 @@ const Login = () => {
 
   //Using a key listner to allow the user to press enter to login
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleLoginClick();
     }
   };
@@ -42,30 +42,32 @@ const Login = () => {
   //Login function to talk with the backend
   const handleLoginClick = async () => {
     try {
-      const res = await axios.post('http://localhost:3001/login', { username, password });
+      const res = await axios.post("http://localhost:3001/login", {
+        username,
+        password,
+      });
       if (res.data.success) {
-        console.log('Login Successful', res.data);
+        console.log("Login Successful", res.data);
         console.log(res.data.role);
         console.log(res.data.username);
         console.log(res.data.password);
-        
+
         // Extract user role from the response data
         const userRole = res.data.role;
-  
-        if(userRole === 'staff') {
-          navigate('/Dashboard');
-        } 
-        else if(userRole === 'client') {
-          navigate('/Portal');
+
+        if (userRole === "staff") {
+          navigate("/Dashboard");
+        } else if (userRole === "client") {
+          navigate("/Portal");
         }
       } else {
-        throw new Error(res.data.error || 'Login failed');
+        throw new Error(res.data.error || "Login failed");
       }
     } catch (err) {
-      console.error('Login Error', err.message);
+      console.error("Login Error", err.message);
       setError(err.message);
-      setPassword('');
-      setUsername('');
+      setPassword("");
+      setUsername("");
       playAnimation();
     }
   };
@@ -76,7 +78,7 @@ const Login = () => {
   //       console.log('Login Successful', res.data);
   //       if( ){
   //         navigate('/Dashboard');
-  //         } else {  
+  //         } else {
   //         navigate('/Portal');
   //       }
   //     } else {
@@ -99,7 +101,7 @@ const Login = () => {
         <h2>ManageMe</h2>
         <form onSubmit={(e) => e.preventDefault()}>
           <div className="form-group">
-            <label htmlFor='username'>USERNAME:</label>
+            <label htmlFor="username">USERNAME:</label>
             <input
               type="text"
               id="username"
@@ -110,7 +112,7 @@ const Login = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor='password'>PASSWORD:</label>
+            <label htmlFor="password">PASSWORD:</label>
             <input
               type="password"
               id="password"
@@ -122,7 +124,11 @@ const Login = () => {
           </div>
           {error && <div className="error-message">{error}</div>}
         </form>
-        <button type="button" onClick={handleLoginClick}>
+        <button
+          className="login-button"
+          type="button"
+          onClick={handleLoginClick}
+        >
           Login
         </button>
       </div>

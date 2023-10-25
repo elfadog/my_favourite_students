@@ -62,10 +62,6 @@ const Dashboard = () => {
 
   const navigate = useNavigate();
 
-  const handleMenuClick = async () => {
-    navigate("/Dashboard");
-  };
-
   const [isAccountPanelOpen, setAccountPanelOpen] = useState(false);
 
   const toggleAccountPanel = () => {
@@ -91,7 +87,7 @@ const Dashboard = () => {
               navigate("/Dashboard");
             }}
           >
-            <h2>ManageMe</h2>
+            <h2 className="h2-dashboard">ManageMe</h2>
           </button>
         </div>
         <div className="right-banner">

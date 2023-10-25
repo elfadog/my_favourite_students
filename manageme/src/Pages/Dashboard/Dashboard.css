@@ -12,10 +12,11 @@
   font-style: normal;
 }
 
-.dashboard-h2 {
+.h2-dashboard {
   font-family: "MuseoModerno-Regular", sans-serif;
   font-size: 2rem;
   color: white;
+  margin: 0;
 }
 
 body {
@@ -231,7 +232,7 @@ ul {
 
 
 .sidebar-toggle-button {
-  margin-top: 25px;
+  /* margin-top: 4px; */
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
