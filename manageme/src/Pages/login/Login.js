@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import gsap from 'gsap';
-import './Login.css';
-import logo from './logo.png';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
+import "./Login.css";
+import logo from "./logo.png";
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const playAnimation = () => {
-    const loginBox = document.querySelector('.login-box');
-    const svg = document.querySelector('.background-svg');
+    const loginBox = document.querySelector(".login-box");
+    const svg = document.querySelector(".background-svg");
 
     gsap.set(loginBox, { opacity: 0 });
 
@@ -25,32 +25,35 @@ const Login = () => {
       ease: "power1.in",
     }).to(loginBox, { duration: 1, opacity: 1, ease: "power1.out" });
     tl.play();
-  }
+  };
 
   useEffect(() => {
     playAnimation();
   }, []);
 
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleLoginClick();
     }
   };
 
   const handleLoginClick = async () => {
     try {
-      const res = await axios.post('http://localhost:3001/login', { username, password });
+      const res = await axios.post("http://localhost:3001/login", {
+        username,
+        password,
+      });
       if (res.data.success) {
-        console.log('Login Successful', res.data);
-        navigate('/Dashboard');
+        console.log("Login Successful", res.data);
+        navigate("/Dashboard");
       } else {
-        throw new Error(res.data.error || 'Login failed');
+        throw new Error(res.data.error || "Login failed");
       }
     } catch (err) {
-      console.error('Login Error', err.message);
+      console.error("Login Error", err.message);
       setError(err.message);
-      setPassword('');
-      setUsername('');
+      setPassword("");
+      setUsername("");
       playAnimation();
     }
   };
@@ -62,7 +65,7 @@ const Login = () => {
         <h2>ManageMe</h2>
         <form onSubmit={(e) => e.preventDefault()}>
           <div className="form-group">
-            <label htmlFor='username'>USERNAME:</label>
+            <label htmlFor="username">USERNAME:</label>
             <input
               type="text"
               id="username"
@@ -73,7 +76,7 @@ const Login = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor='password'>PASSWORD:</label>
+            <label htmlFor="password">PASSWORD:</label>
             <input
               type="password"
               id="password"
@@ -85,7 +88,11 @@ const Login = () => {
           </div>
           {error && <div className="error-message">{error}</div>}
         </form>
-        <button type="button" onClick={handleLoginClick}>
+        <button
+          className="login-button"
+          type="button"
+          onClick={handleLoginClick}
+        >
           Login
         </button>
       </div>

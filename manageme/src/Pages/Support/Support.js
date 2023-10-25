@@ -11,7 +11,6 @@ const Support = () => {
 
   return (
     <div className="dashboard-container">
-      {/* Sidebar */}
       <div className="banner">
         <div className="left-banner">
           <button
