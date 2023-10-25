@@ -41,8 +41,8 @@
 }
 
 .react-calendar {
-  width: 350px;
-  max-width: 100%;
+  /* width: 350px;
+  max-width: 100%; */
   background: #fff; /*background color*/
   color: #222;
   border-radius: 16px;
@@ -58,10 +58,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: right;
-  margin-top: 10px;
-  margin-right: 10px;
   height: 37vh; /* Set the desired height */
-  width: 40%; /* Set the desired width */
+  width: 20vw; /* Set the desired width */
 }
 
 .react-calendar--doubleView {
@@ -234,7 +232,7 @@
 }
 
 .react-calendar {
-  width: 70%;
-  max-width: 70vh;
-  margin: 0 auto;
+  width: calc(100% - 40px);
+  max-width: 30vw;
+  margin: 0 20px;
 }
